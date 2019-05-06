@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>ChinaMM 2019 Challenge</title>
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" type="text/css" href="css/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="fonts/font-awesome/css/font-awesome.css">
+
+    <!-- Slider
+        ================================================== -->
+    <link href="css/owl.carousel.css" rel="stylesheet" media="screen">
+    <link href="css/owl.theme.css" rel="stylesheet" media="screen">
+
+    <!-- Stylesheet
+        ================================================== -->
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/prettyPhoto.css">
+    <link rel="stylesheet" type="text/css" href="css/workshop.css">
+</head>
+<body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top" style="color: #000">
+<!-- Navigation -->
+<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation" style="height: auto">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-target=".navbar-main-collapse">
+                <i class="fa fa-bars"></i>
+            </button>
+            <a class="navbar-brand page-scroll" href="#">
+                <i class="fa fa-terminal" ></i> ChinaMM 2019 Challenge
+            </a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse navbar-right navbar-main-collapse" >
+            <!--<ul class="nav navbar-nav">-->
+                <!-- Hidden li included to remove active class from about link when scrolled up past about section -->
+                <!--<li class="hidden">-->
+                    <!--<a href="#page-top"></a>-->
+                <!--</li>-->
+                <!--<li><a href="./result.html" style="font-size: 14pt;">Board</a></li>-->
+                <!--<li>-->
+                    <!--<a class="page-scroll" href="#news" style="font-size: 14pt;">Home</a>-->
+                <!--</li>-->
+                <!--<li><a class="page-scroll" href="#days" style="font-size: 14pt;">Important Dates</a></li>-->
+                <!--<li><a href="http://www.icme2017.org/workshops/" style="font-size: 14pt;">All Workshops</a></li>-->
+                <!--<li><a href="http://www.icme2017.org/" style="font-size: 14pt;">About ICME2017</a></li>-->
+                <!--<li><a href="people.html">People</a></li>-->
+                <!--<li><a href="talks.html">Talks</a></li>-->
+                <!--<li><a href="publication.html">Publication</a></li>-->
+                <!--<li><a href="MISC.html">MISC</a></li>-->
+                <!--<li><a href="old/struct.html">Old Version</a></li>-->
+            <!--</ul>-->
+            <a href="http://mm.ccf.org.cn/chinamm/2019"><img src="img/banner-index.png" style="position: relative; margin-right: 10%; margin-top: 10px" width="100" class="pull-right"></a>
+
+        </div>
+    </div>
+</nav>
+<div class="modified-header intro" style="background-image: url(img/bg.png); padding-top: 60px">
+
+    <div class="intro-body">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2">
+                    <h1>ChinaMM 2019 <br><span class="brand-heading">Grand Challenge</span></h1>
+                    <p class="intro-text">Face Detection in Low-Light Conditions
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="news-session" id="news" >
+    <div class="container">
+        <div class="section-title text-center center" style="">
+            <h2>Recent News</h2>
+            <hr>
+        </div>
+        <div class="row">
+            <div class="col-lg-10 col-lg-offset-1">
+                <table class="hidden" id="sample">
+                    <tr class="news-item" style="background-color: #FFFFFF">
+                        <td class="news-text"><span class="glyphicon glyphicon-heart" aria-hidden="true"></span></td>
+                        <td class="news-text" width="150px">
+                            <strong></strong>
+                        </td>
+                        <td class="news-text" style="font-size: 14pt">
+                        </td>
+                    </tr>
+                </table>
+                <table class="news-container">
+
+
+                </table>
+                <div class="hidden">
+                    <div class="dev-item">
+                        <span>May  6, 2019</span>
+                        <span>Web page now online.</span>
+                    </div>
+
+                    <div class="dev-item">
+                        <span>TBD, 2019</span>
+                        <span><strong>Registration now open.</strong></span>
+                    </div>
+
+                    <div class="dev-item">
+                        <span>TBD, 2019</span>
+                        <span><strong>Training data is now available.</strong></span>
+                    </div>
+
+                    <div class="dev-item">
+                        <span>TBD, 2019</span>
+                        <span><strong>Testing data will be released in the future.</strong></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div style="background-color: #F5F5F5">
+    <div class="container" > <!-- Container -->
+        <div class="col-lg-10 col-lg-offset-1">
+            <div class="section-title text-center center">
+                <h2>Descriptions</h2>
+                <hr>
+                <div class="welcome-message text-left" style="font-size: 14pt">
+                <p>
+                    Outdoor scenes are often affected by bad weather and the related complex visual degradations. 
+                    Poor visibility and detail loss in the low-light conditions set obstacles to visual enhancement and the successive perception tasks, e.g. detection, recognition et al.
+                    This challenge is meant to consolidate research efforts about face detection from single images captured in low-light conditions. 
+                </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div>
+    <div class="container"> <!-- Container -->
+        <div class="col-lg-10 col-lg-offset-1">
+            <div class="section-title text-center center">
+                <h2>Datasets</h2>
+                <hr>
+                <p class="welcome-message text-left" style="font-size: 14pt">
+                    <strong>FD-LOL</strong> (Face Detection in LOw-Light Conditions): dataset provides 6,000 real-world low light images captured during the nighttime, at teaching buildings, streets, bridges, overpasses, parks etc., all labeled with bounding boxes for of human face, as the main training and/or validation sets. We also provide 9,000 unlabeled low-light images collected from the same setting. Additionally, we provided a unique set of 789 paired low-light/normal-light images captured in controllable real lighting conditions (but unnecessarily containing faces), which can be used as parts of the training data at the participants' discretization. There will be a hold-out testing set of 4,000 low-light images, with human face bounding boxes annotated accurately. <br>
+                    <strong>[Google Drive]</strong>: <a href="">TBD</a><br>
+                    <strong>[Baidu Yun]</strong>:    <a href="">TBD</a>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+<div style="margin-top: -30px; padding-bottom: 60px"  id="registration"></div>
+<div id="days" style="background-color: #F5F5F5; padding-bottom: 30px;" class="">
+    <div class="container">
+        <div class="col-lg-10 col-lg-offset-1">
+            <div class="section-title text-center center">
+                <h2>
+                    Registration
+                </h2>
+                <hr>
+                <p class="welcome-message text-left" style="font-size: 14pt">
+                    Each team will be asked to register prior to the submission period. Registration is now opened, to
+                    register please submit the Registration Form to <strong>ChinaMM19challenge@gmail.com</strong>.
+                </p>
+
+            </div>
+        </div>
+        <div class="col-lg-6 col-lg-offset-3">
+            <div>
+                <table class="solid_form">
+                    <tr>
+                        <td class="solid_form">Team Name</td>
+                        <td class="solid_form">&nbsp;&nbsp;&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td class="solid_form">School/Organization Name</td>
+                        <td class="solid_form">&nbsp;&nbsp;&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td class="solid_form">Team Members' Name</td>
+                        <td class="solid_form">&nbsp;&nbsp;&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td class="solid_form">Email Address</td>
+                        <td class="solid_form">&nbsp;&nbsp;&nbsp;</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+<div style="background-color: #FFFFFF">
+    <div class="container">
+        <div class="col-lg-10 col-lg-offset-1">
+            <div class="section-title text-center center">
+                <h2>
+                    Important Dates
+                </h2>
+                <hr>
+                <ul class="welcome-message text-left" style="font-size: 14pt">
+                    <li class="welcome-message text-left">
+                        ⦁ <strong>July 1</strong>, &nbsp;Release of testing data.
+                    </li>
+                </ul>
+                <!--<ul class="welcome-message text-left" style="font-size: 14pt">
+                    <li class="welcome-message text-left">
+                        ⦁ <strong>May 12</strong>, &nbsp;Release of testing data.
+                    </li>
+                    <li class="welcome-message text-left">
+                        ⦁ <strong>May 27</strong>, &nbsp;Test image submission deadline.
+                    </li>
+                    <li class="welcome-message text-left">
+                        ⦁ <strong>May 27</strong>, &nbsp;Deadline for the accompanying papers for possible publication at ICIP 2019. (optional)
+                    </li>
+                    <li class="welcome-message text-left">
+                        ⦁ <strong>July&nbsp;&nbsp;&nbsp; 1</strong>, &nbsp;Announcement of the evaluation results.
+                    </li>
+                    <li class="welcome-message text-left">
+                        ⦁ <strong>July&nbsp;&nbsp;&nbsp; 1</strong>, &nbsp;Notification for the acceptance of the accompanying papers. (optional)
+                    </li>
+                    <li class="welcome-message text-left">
+                        ⦁ <strong>July&nbsp; 15</strong>, &nbsp;Deadline for the submission of accepted camera-ready paper. (optional)
+                    </li>
+
+                </ul>-->
+            </div>
+        </div>
+    </div>
+</div>
+
+<div  style="background-color: #F5F5F5" class="hidden">
+    <div class="container">
+        <div class="col-lg-10 col-lg-offset-1">
+            <div class="section-title text-center center">
+                <h2>Topics Of Interest</h2>
+                <hr>
+                <p class="welcome-message text-left">
+                    The challenge focuses on analysis of daily indoor activities from skeleton data captured by 3D
+                    cameras for two different tasks.
+                </p>
+                <ul>
+                    <li class="welcome-message text-left">
+                        ⦁ Segmented Action Recognition Challenge:<br>
+                        &nbsp; Given a well-segmented
+                        skeleton video clip, predict the label of the activity present in the video clip.
+                    </li>
+                    <li class="welcome-message text-left" style="margin-top: 10px">
+                        ⦁ Untrimmed Action Detection Challenge:<br>
+                        &nbsp; Given a long skeleton video,
+                        predict the action intervals with labels of the activities<!-- present in the video-->.
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div style="background-color: #F5F5F5" class="hidden">
+    <div class="container">
+        <div class="col-lg-10 col-lg-offset-1">
+            <div class="section-title text-center center">
+                <h2>
+                    Significance
+                </h2>
+                <hr>
+                <p class="welcome-message text-left" style="font-size: 14pt">
+                    Activity analysis is an important area in computer vision and strongly relevant to multimedia.
+                    Different from other topics in the main conference, this workshop focuses on 3D human activity
+                    analysis which has been shown to have a potentially large impact in broad practical applications
+                    like visual surveillance, human-robot interaction, elderly assistance systems, etc.
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+<div style="background-color: #F5F5F5">
+    <div class="container">
+        <div class="section-title text-center center">
+            <h2>
+                Organizers
+            </h2>
+            <hr>
+        </div>
+        <div>
+
+
+            <div class="row">
+                <div class="col-lg-3 col-lg-offset-1">
+                    <img src="img/WenhanYang.jpg" width="180px" style="border-radius: 50%; border: solid thick #F4D03F" class="img-rounded">
+                </div>
+                <div class="col-lg-7" style="font-size: x-large">
+                    <strong>Dr. Wenhan Yang<br></strong>
+                    Postdoctoral Researcher, Department of Computer Science<br>
+                    City University of Hong Kong, Hong Kong, P.R. China<br>
+                    Email: wyang34 AT cityu.edu.hk<br>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-3 col-lg-offset-1">
+                    <img src="img/Liujiaying_square.jpeg" width="180px" style="border-radius: 50%; border: solid thick #F4D03F" class="img-rounded">
+                </div>
+                <div class="col-lg-7" style="font-size: x-large">
+                    <strong>Dr. Jiaying Liu<br></strong>
+                    Associate Professor, Institute of Computer Science and Technology<br>
+                    Peking University, Beijing, P.R. China<br>
+                    Email: liujiaying AT pku.edu.cn<br>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-3 col-lg-offset-1">
+                    <img src="img/dong.jpg" width="180px" style="border-radius: 50%; border: solid thick #F4D03F" class="img-rounded">
+                </div>
+                <div class="col-lg-7" style="font-size: x-large">
+                    <strong>Dr. Dong Liu<br></strong>
+                    Associate Professor, Dept. Electronic Engineering & Information Science<br>
+                    University of Science and Technology of China, P.R. China<br>
+                    Email: dongeliu AT ustc.edu.cn<br>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div style="background-color: #F5F5F5" class="hidden">
+    <div class="container">
+        <div class="col-lg-10 col-lg-offset-1">
+            <div class="section-title text-center center">
+                <h2>
+                    Acknowledgment
+                </h2>
+                <hr>
+                <p class="welcome-message text-center" style="font-size: 14pt">
+                    This workshop is funded by Microsoft Research Asia, project ID FY17-RES-THEME-013.
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Portfolio Section -->
+
+
+<!--<footer class="page-footer" style="background-color: rgb(34,34,34); margin: 0 !important; color: #F5F5F5">-->
+    <!--<div class="container">-->
+        <!--<div class="text-center fnav">-->
+            <!--<p>Copyright © 2013 .</p>-->
+        <!--</div>-->
+    <!--</div>-->
+<!--</footer>-->
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script type="text/javascript" src="js/jquery-3.1.0.min.js"></script>
+<!--<script type="text/javascript" src="js/materialize.min.js"></script>-->
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+<!--<script type="text/javascript" src="js/SmoothScroll.js"></script>-->
+<script type="text/javascript" src="js/jquery.prettyPhoto.js"></script>
+<script type="text/javascript" src="js/jquery.isotope.js"></script>
+<script type="text/javascript" src="js/jquery.counterup.js"></script>
+<script type="text/javascript" src="js/waypoints.js"></script>
+<script type="text/javascript" src="js/jqBootstrapValidation.js"></script>
+<script type="text/javascript" src="js/contact_me.js"></script>
+<script src="js/owl.carousel.js"></script>
+
+<!-- Javascripts
+    ================================================== -->
+<script type="text/javascript" src="js/main.js"></script>
+<script type="text/javascript" src="js/custom.js"></script>
+</body>
+</html>
