@@ -1,0 +1,135 @@
+/*---
+Author: W3layouts
+Author URL: http://w3layouts.com
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/
+--*/
+/* reset */
+
+
+img{max-width:100%;}
+
+.grid3-content{
+	width: 65%;
+	margin:0 auto;
+	margin-top: -50px;
+}
+
+.portfolio-bottom{
+	background:none;
+	color:#2a323a;
+	padding: 3px 0;	
+}
+
+.portfolio-bottom a{
+	font-size: 18px;
+	color:#2a323a;
+}
+
+.portfolio-bottom p{
+	text-overflow: ellipsis; 
+	overflow: hidden; 
+	white-space: nowrap;;
+}
+.welcome-photo{
+	width:200px;
+	height:200px;
+	position:relative;
+	margin-left:auto;
+	margin-right:auto;
+}
+
+.welcome-photo1{
+	position:absolute;
+	left:0px; 
+	top:0px; 
+	width:200px; 
+	height:200px
+}
+
+.welcome-photo2{
+	width:200px;
+	position:relative;
+	margin-left:auto;
+	margin-right:auto;
+	width:100%;
+}
+
+.welcome-photo2 img{
+	border: 5px solid #dedede;
+	border-radius:15px;
+}
+
+.welcome-photo3{
+	position:absolute;
+	left:0px; 
+	top:0px; 
+	height:100%;
+	width:100%
+}
+
+.grid3-content .container{
+	text-align:center;
+	width:95%;
+	margin-left:auto;
+	margin-right:auto;
+	vertical-align: top;
+}
+
+.img-content{
+	width:24%;
+	margin-left:auto;
+	margin-right:auto;
+	padding:5px;
+	display:inline-block !important; 
+	*display:inline;
+}
+
+.portfolio-bottom p{
+	cursor:pointer;
+}	
+
+/*----responsive design----*/
+@media only screen and (max-width: 1366px) and (min-width: 1280px) {
+	.grid3-content {
+		width: 76%;
+	}
+}
+@media only screen and (max-width: 1280px) and (min-width: 1024px) {	
+	.grid3-content {
+		width: 76%;
+	}
+}
+@media only screen and (max-width: 1024px) and (min-width: 768px) {
+	.grid3-content {
+		width: 83%;
+	}
+	.portfolio-bottom a{
+		font-size: 16px;
+	}
+	.portfolio-bottom p{
+		font-size: 14px;
+	}	
+}
+@media only screen and (max-width: 768px) and (min-width: 640px) {
+	.grid3-content {
+		width: 83%;
+	}
+	.portfolio-bottom a{
+		font-size: 14px;
+	}
+	.portfolio-bottom p{
+		font-size: 12px;
+	}	
+}
+@media only screen and (max-width: 640px) and (min-width: 10px) {
+	.grid3-content {
+		width: 83%;
+	}
+	.portfolio-bottom a{
+		font-size: 10px;
+	}
+	.portfolio-bottom p{
+		font-size: 8px;
+	}		
+}
