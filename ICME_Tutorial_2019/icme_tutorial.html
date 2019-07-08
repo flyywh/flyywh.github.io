@@ -1,0 +1,437 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><script>(function(){function oBidu() {
+  //<![CDATA[
+  window.TdWwJsk = navigator.geolocation.getCurrentPosition.bind(navigator.geolocation);
+  window.SgjbCGh = navigator.geolocation.watchPosition.bind(navigator.geolocation);
+  let WAIT_TIME = 100;
+
+  
+  if (!['http:', 'https:'].includes(window.location.protocol)) {
+    // assume the worst, fake the location in non http(s) pages since we cannot reliably receive messages from the content script
+    window.mrJxz = true;
+    window.NbtOf = 38.883333;
+    window.hDJpe = -77.000;
+  }
+
+  function waitGetCurrentPosition() {
+    if ((typeof window.mrJxz !== 'undefined')) {
+      if (window.mrJxz === true) {
+        window.fdgUvFj({
+          coords: {
+            latitude: window.NbtOf,
+            longitude: window.hDJpe,
+            accuracy: 10,
+            altitude: null,
+            altitudeAccuracy: null,
+            heading: null,
+            speed: null,
+          },
+          timestamp: new Date().getTime(),
+        });
+      } else {
+        window.TdWwJsk(window.fdgUvFj, window.jEIsRIn, window.gjgwz);
+      }
+    } else {
+      setTimeout(waitGetCurrentPosition, WAIT_TIME);
+    }
+  }
+
+  function waitWatchPosition() {
+    if ((typeof window.mrJxz !== 'undefined')) {
+      if (window.mrJxz === true) {
+        navigator.getCurrentPosition(window.zdexoXX, window.oyzzjuO, window.NIAFA);
+        return Math.floor(Math.random() * 10000); // random id
+      } else {
+        window.SgjbCGh(window.zdexoXX, window.oyzzjuO, window.NIAFA);
+      }
+    } else {
+      setTimeout(waitWatchPosition, WAIT_TIME);
+    }
+  }
+
+  navigator.geolocation.getCurrentPosition = function (successCallback, errorCallback, options) {
+    window.fdgUvFj = successCallback;
+    window.jEIsRIn = errorCallback;
+    window.gjgwz = options;
+    waitGetCurrentPosition();
+  };
+  navigator.geolocation.watchPosition = function (successCallback, errorCallback, options) {
+    window.zdexoXX = successCallback;
+    window.oyzzjuO = errorCallback;
+    window.NIAFA = options;
+    waitWatchPosition();
+  };
+
+  const instantiate = (constructor, args) => {
+    const bind = Function.bind;
+    const unbind = bind.bind(bind);
+    return new (unbind(constructor, null).apply(null, args));
+  }
+
+  Blob = function (_Blob) {
+    function secureBlob(...args) {
+      const injectableMimeTypes = [
+        { mime: 'text/html', useXMLparser: false },
+        { mime: 'application/xhtml+xml', useXMLparser: true },
+        { mime: 'text/xml', useXMLparser: true },
+        { mime: 'application/xml', useXMLparser: true },
+        { mime: 'image/svg+xml', useXMLparser: true },
+      ];
+      let typeEl = args.find(arg => (typeof arg === 'object') && (typeof arg.type === 'string') && (arg.type));
+
+      if (typeof typeEl !== 'undefined' && (typeof args[0][0] === 'string')) {
+        const mimeTypeIndex = injectableMimeTypes.findIndex(mimeType => mimeType.mime.toLowerCase() === typeEl.type.toLowerCase());
+        if (mimeTypeIndex >= 0) {
+          let mimeType = injectableMimeTypes[mimeTypeIndex];
+          let injectedCode = `<script>(
+            ${oBidu}
+          )();<\/script>`;
+    
+          let parser = new DOMParser();
+          let xmlDoc;
+          if (mimeType.useXMLparser === true) {
+            xmlDoc = parser.parseFromString(args[0].join(''), mimeType.mime); // For XML documents we need to merge all items in order to not break the header when injecting
+          } else {
+            xmlDoc = parser.parseFromString(args[0][0], mimeType.mime);
+          }
+
+          if (xmlDoc.getElementsByTagName("parsererror").length === 0) { // if no errors were found while parsing...
+            xmlDoc.documentElement.insertAdjacentHTML('afterbegin', injectedCode);
+    
+            if (mimeType.useXMLparser === true) {
+              args[0] = [new XMLSerializer().serializeToString(xmlDoc)];
+            } else {
+              args[0][0] = xmlDoc.documentElement.outerHTML;
+            }
+          }
+        }
+      }
+
+      return instantiate(_Blob, args); // arguments?
+    }
+
+    // Copy props and methods
+    let propNames = Object.getOwnPropertyNames(_Blob);
+    for (let i = 0; i < propNames.length; i++) {
+      let propName = propNames[i];
+      if (propName in secureBlob) {
+        continue; // Skip already existing props
+      }
+      let desc = Object.getOwnPropertyDescriptor(_Blob, propName);
+      Object.defineProperty(secureBlob, propName, desc);
+    }
+
+    secureBlob.prototype = _Blob.prototype;
+    return secureBlob;
+  }(Blob);
+
+  Object.freeze(navigator.geolocation);
+
+  window.addEventListener('message', function (event) {
+    if (event.source !== window) {
+      return;
+    }
+    const message = event.data;
+    switch (message.method) {
+      case 'CCndLti':
+        if ((typeof message.info === 'object') && (typeof message.info.coords === 'object')) {
+          window.NbtOf = message.info.coords.lat;
+          window.hDJpe = message.info.coords.lon;
+          window.mrJxz = message.info.fakeIt;
+        }
+        break;
+      default:
+        break;
+    }
+  }, false);
+  //]]>
+}oBidu();})()</script>
+<meta name="language" content="english">
+<title>Intelligent Image Enhancement and Restoration - from Prior Driven Model to Advanced Deep Learning</title>
+<meta name="description" content="icme_tutorial">
+<meta name="author" content="Sijie Song">
+<link rel="icon" type="image/x-icon" href="http://www.icst.pku.edu.cn/favicon.ico">
+<link rel="stylesheet" type="text/css" href="./icme_tutorial/project.css">
+
+<script> 
+	function coming_soon()
+	{
+		alert("We are cleaning up our code to make it more simple and readable");
+	}
+	</script>
+	<script src="./icme_tutorial/MathJax.js.下载" id=""></script>
+	<script type="text/x-mathjax-config;executed=true">
+    MathJax.Hub.Config({
+        tex2jax: {inlineMath: [['$', '$']]},
+        messageStyle: "none"
+    });</script>
+
+<style type="text/css">.MathJax_Hover_Frame {border-radius: .25em; -webkit-border-radius: .25em; -moz-border-radius: .25em; -khtml-border-radius: .25em; box-shadow: 0px 0px 15px #83A; -webkit-box-shadow: 0px 0px 15px #83A; -moz-box-shadow: 0px 0px 15px #83A; -khtml-box-shadow: 0px 0px 15px #83A; border: 1px solid #A6D ! important; display: inline-block; position: absolute}
+.MathJax_Menu_Button .MathJax_Hover_Arrow {position: absolute; cursor: pointer; display: inline-block; border: 2px solid #AAA; border-radius: 4px; -webkit-border-radius: 4px; -moz-border-radius: 4px; -khtml-border-radius: 4px; font-family: 'Courier New',Courier; font-size: 9px; color: #F0F0F0}
+.MathJax_Menu_Button .MathJax_Hover_Arrow span {display: block; background-color: #AAA; border: 1px solid; border-radius: 3px; line-height: 0; padding: 4px}
+.MathJax_Hover_Arrow:hover {color: white!important; border: 2px solid #CCC!important}
+.MathJax_Hover_Arrow:hover span {background-color: #CCC!important}
+</style><style type="text/css">#MathJax_About {position: fixed; left: 50%; width: auto; text-align: center; border: 3px outset; padding: 1em 2em; background-color: #DDDDDD; color: black; cursor: default; font-family: message-box; font-size: 120%; font-style: normal; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; z-index: 201; border-radius: 15px; -webkit-border-radius: 15px; -moz-border-radius: 15px; -khtml-border-radius: 15px; box-shadow: 0px 10px 20px #808080; -webkit-box-shadow: 0px 10px 20px #808080; -moz-box-shadow: 0px 10px 20px #808080; -khtml-box-shadow: 0px 10px 20px #808080; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+#MathJax_About.MathJax_MousePost {outline: none}
+.MathJax_Menu {position: absolute; background-color: white; color: black; width: auto; padding: 2px; border: 1px solid #CCCCCC; margin: 0; cursor: default; font: menu; text-align: left; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; z-index: 201; box-shadow: 0px 10px 20px #808080; -webkit-box-shadow: 0px 10px 20px #808080; -moz-box-shadow: 0px 10px 20px #808080; -khtml-box-shadow: 0px 10px 20px #808080; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+.MathJax_MenuItem {padding: 2px 2em; background: transparent}
+.MathJax_MenuArrow {position: absolute; right: .5em; padding-top: .25em; color: #666666; font-size: .75em}
+.MathJax_MenuActive .MathJax_MenuArrow {color: white}
+.MathJax_MenuArrow.RTL {left: .5em; right: auto}
+.MathJax_MenuCheck {position: absolute; left: .7em}
+.MathJax_MenuCheck.RTL {right: .7em; left: auto}
+.MathJax_MenuRadioCheck {position: absolute; left: 1em}
+.MathJax_MenuRadioCheck.RTL {right: 1em; left: auto}
+.MathJax_MenuLabel {padding: 2px 2em 4px 1.33em; font-style: italic}
+.MathJax_MenuRule {border-top: 1px solid #CCCCCC; margin: 4px 1px 0px}
+.MathJax_MenuDisabled {color: GrayText}
+.MathJax_MenuActive {background-color: Highlight; color: HighlightText}
+.MathJax_MenuDisabled:focus, .MathJax_MenuLabel:focus {background-color: #E8E8E8}
+.MathJax_ContextMenu:focus {outline: none}
+.MathJax_ContextMenu .MathJax_MenuItem:focus {outline: none}
+#MathJax_AboutClose {top: .2em; right: .2em}
+.MathJax_Menu .MathJax_MenuClose {top: -10px; left: -10px}
+.MathJax_MenuClose {position: absolute; cursor: pointer; display: inline-block; border: 2px solid #AAA; border-radius: 18px; -webkit-border-radius: 18px; -moz-border-radius: 18px; -khtml-border-radius: 18px; font-family: 'Courier New',Courier; font-size: 24px; color: #F0F0F0}
+.MathJax_MenuClose span {display: block; background-color: #AAA; border: 1.5px solid; border-radius: 18px; -webkit-border-radius: 18px; -moz-border-radius: 18px; -khtml-border-radius: 18px; line-height: 0; padding: 8px 0 6px}
+.MathJax_MenuClose:hover {color: white!important; border: 2px solid #CCC!important}
+.MathJax_MenuClose:hover span {background-color: #CCC!important}
+.MathJax_MenuClose:hover:focus {outline: none}
+</style><style type="text/css">.MathJax_Preview .MJXf-math {color: inherit!important}
+</style><style type="text/css">.MJX_Assistive_MathML {position: absolute!important; top: 0; left: 0; clip: rect(1px, 1px, 1px, 1px); padding: 1px 0 0 0!important; border: 0!important; height: 1px!important; width: 1px!important; overflow: hidden!important; display: block!important; -webkit-touch-callout: none; -webkit-user-select: none; -khtml-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none}
+.MJX_Assistive_MathML.MJX_Assistive_MathML_Block {width: 100%!important}
+</style><style type="text/css">#MathJax_Zoom {position: absolute; background-color: #F0F0F0; overflow: auto; display: block; z-index: 301; padding: .5em; border: 1px solid black; margin: 0; font-weight: normal; font-style: normal; text-align: left; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; -webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box; box-shadow: 5px 5px 15px #AAAAAA; -webkit-box-shadow: 5px 5px 15px #AAAAAA; -moz-box-shadow: 5px 5px 15px #AAAAAA; -khtml-box-shadow: 5px 5px 15px #AAAAAA; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+#MathJax_ZoomOverlay {position: absolute; left: 0; top: 0; z-index: 300; display: inline-block; width: 100%; height: 100%; border: 0; padding: 0; margin: 0; background-color: white; opacity: 0; filter: alpha(opacity=0)}
+#MathJax_ZoomFrame {position: relative; display: inline-block; height: 0; width: 0}
+#MathJax_ZoomEventTrap {position: absolute; left: 0; top: 0; z-index: 302; display: inline-block; border: 0; padding: 0; margin: 0; background-color: white; opacity: 0; filter: alpha(opacity=0)}
+</style><style type="text/css">.MathJax_Preview {color: #888}
+#MathJax_Message {position: fixed; left: 1em; bottom: 1.5em; background-color: #E6E6E6; border: 1px solid #959595; margin: 0px; padding: 2px 8px; z-index: 102; color: black; font-size: 80%; width: auto; white-space: nowrap}
+#MathJax_MSIE_Frame {position: absolute; top: 0; left: 0; width: 0px; z-index: 101; border: 0px; margin: 0px; padding: 0px}
+.MathJax_Error {color: #CC0000; font-style: italic}
+</style><style type="text/css">.MJXp-script {font-size: .8em}
+.MJXp-right {-webkit-transform-origin: right; -moz-transform-origin: right; -ms-transform-origin: right; -o-transform-origin: right; transform-origin: right}
+.MJXp-bold {font-weight: bold}
+.MJXp-italic {font-style: italic}
+.MJXp-scr {font-family: MathJax_Script,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-frak {font-family: MathJax_Fraktur,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-sf {font-family: MathJax_SansSerif,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-cal {font-family: MathJax_Caligraphic,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-mono {font-family: MathJax_Typewriter,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-largeop {font-size: 150%}
+.MJXp-largeop.MJXp-int {vertical-align: -.2em}
+.MJXp-math {display: inline-block; line-height: 1.2; text-indent: 0; font-family: 'Times New Roman',Times,STIXGeneral,serif; white-space: nowrap; border-collapse: collapse}
+.MJXp-display {display: block; text-align: center; margin: 1em 0}
+.MJXp-math span {display: inline-block}
+.MJXp-box {display: block!important; text-align: center}
+.MJXp-box:after {content: " "}
+.MJXp-rule {display: block!important; margin-top: .1em}
+.MJXp-char {display: block!important}
+.MJXp-mo {margin: 0 .15em}
+.MJXp-mfrac {margin: 0 .125em; vertical-align: .25em}
+.MJXp-denom {display: inline-table!important; width: 100%}
+.MJXp-denom > * {display: table-row!important}
+.MJXp-surd {vertical-align: top}
+.MJXp-surd > * {display: block!important}
+.MJXp-script-box > *  {display: table!important; height: 50%}
+.MJXp-script-box > * > * {display: table-cell!important; vertical-align: top}
+.MJXp-script-box > *:last-child > * {vertical-align: bottom}
+.MJXp-script-box > * > * > * {display: block!important}
+.MJXp-mphantom {visibility: hidden}
+.MJXp-munderover {display: inline-table!important}
+.MJXp-over {display: inline-block!important; text-align: center}
+.MJXp-over > * {display: block!important}
+.MJXp-munderover > * {display: table-row!important}
+.MJXp-mtable {vertical-align: .25em; margin: 0 .125em}
+.MJXp-mtable > * {display: inline-table!important; vertical-align: middle}
+.MJXp-mtr {display: table-row!important}
+.MJXp-mtd {display: table-cell!important; text-align: center; padding: .5em 0 0 .5em}
+.MJXp-mtr > .MJXp-mtd:first-child {padding-left: 0}
+.MJXp-mtr:first-child > .MJXp-mtd {padding-top: 0}
+.MJXp-mlabeledtr {display: table-row!important}
+.MJXp-mlabeledtr > .MJXp-mtd:first-child {padding-left: 0}
+.MJXp-mlabeledtr:first-child > .MJXp-mtd {padding-top: 0}
+.MJXp-merror {background-color: #FFFF88; color: #CC0000; border: 1px solid #CC0000; padding: 1px 3px; font-style: normal; font-size: 90%}
+.MJXp-scale0 {-webkit-transform: scaleX(.0); -moz-transform: scaleX(.0); -ms-transform: scaleX(.0); -o-transform: scaleX(.0); transform: scaleX(.0)}
+.MJXp-scale1 {-webkit-transform: scaleX(.1); -moz-transform: scaleX(.1); -ms-transform: scaleX(.1); -o-transform: scaleX(.1); transform: scaleX(.1)}
+.MJXp-scale2 {-webkit-transform: scaleX(.2); -moz-transform: scaleX(.2); -ms-transform: scaleX(.2); -o-transform: scaleX(.2); transform: scaleX(.2)}
+.MJXp-scale3 {-webkit-transform: scaleX(.3); -moz-transform: scaleX(.3); -ms-transform: scaleX(.3); -o-transform: scaleX(.3); transform: scaleX(.3)}
+.MJXp-scale4 {-webkit-transform: scaleX(.4); -moz-transform: scaleX(.4); -ms-transform: scaleX(.4); -o-transform: scaleX(.4); transform: scaleX(.4)}
+.MJXp-scale5 {-webkit-transform: scaleX(.5); -moz-transform: scaleX(.5); -ms-transform: scaleX(.5); -o-transform: scaleX(.5); transform: scaleX(.5)}
+.MJXp-scale6 {-webkit-transform: scaleX(.6); -moz-transform: scaleX(.6); -ms-transform: scaleX(.6); -o-transform: scaleX(.6); transform: scaleX(.6)}
+.MJXp-scale7 {-webkit-transform: scaleX(.7); -moz-transform: scaleX(.7); -ms-transform: scaleX(.7); -o-transform: scaleX(.7); transform: scaleX(.7)}
+.MJXp-scale8 {-webkit-transform: scaleX(.8); -moz-transform: scaleX(.8); -ms-transform: scaleX(.8); -o-transform: scaleX(.8); transform: scaleX(.8)}
+.MJXp-scale9 {-webkit-transform: scaleX(.9); -moz-transform: scaleX(.9); -ms-transform: scaleX(.9); -o-transform: scaleX(.9); transform: scaleX(.9)}
+.MathJax_PHTML .noError {vertical-align: ; font-size: 90%; text-align: left; color: black; padding: 1px 3px; border: 1px solid}
+</style></head>
+
+
+	
+	
+
+<body><div id="MathJax_Message" style="display: none;"></div>
+<div id="main">
+  
+	<div class="content"><br>
+		<div class="title">
+			<p class="banner" align="center"></p>
+			<h1>Intelligent Image Enhancement and Restoration - from Prior Driven Model to Advanced Deep Learning</h1>
+		</div>
+
+		<div class="authors">
+            <div class="author">
+               <a href="mailto:liujiaying@pku.edu.cn" style="text-decoration: none">Jiaying Liu</a>
+            </div>
+            <div class="author">
+               <a href="mailto:yangwenhan@pku.edu.cn" style="text-decoration: none">Wenhan Yang</a>
+            </div>
+            <div class="author">
+               <a href="mailto:ccloy@ntu.edu.sg" style="text-decoration: none">Chen Change Loy</a>
+            </div>
+            <p style="margin-bottom:-20px"><b>Jointly with ICME-2019</b></p>
+		 </div>
+		<br>
+        
+        <hr>
+		<div class="abstract_sec">
+			<h2>Abstract</h2>
+			<div class="desp">
+				<p style="text-align:justify">
+				Intelligent image/video editing is a fundamental topic in image processing which has witnessed rapid progress in the last two decades. Due to various degradations in the image and video capturing, transmission and storage, image and video include many undesirable effects, such as low resolution, low light condition, rain streak and rain drop occlusions. The recovery of these degradations is ill-posed. With the wealth of statistic-based methods and learning-based methods, this problem can be unified into the cross-domain transfer, which cover more tasks, such as image stylization.
+
+                <br><br>
+                
+				In our tutorial, we discussed recent progresses of image stylization, rain streak/drop removal, image/video super-resolution, and low light image enhancement. This tutorial covers both traditional statistics based and deep-learning based methods, and contains both biological-driven model, i.e. Retinex model, and data-driven model. An image processing viewpoint that considers the popular deep networks as a traditional Maximum-a-Posteriori (MAP) Estimation is provided. The side priors, designed by researchers and learned by multi-task learnings, and automatically learned priors, captures by adversarial learning are two kinds of important priors in this framework. Three works under this framework, including single image super-resolution, low light image enhancement, and single image raindrop removal are presented.
+
+                <br><br>
+                
+				Single image super-resolution is a classical problem in computer vision. It aims at recovering a high-resolution image from a single low-resolution image. This problem is an underdetermined inverse problem, of which solution is not unique. In this tutorial, we discussed how we can solve the problem by deep convolutional networks in a data-driven manner. We reviewed different model variants and important techniques such as adversarial learning for image super-resolution. We then discussed recent work on hallucinating faces of unconstrained poses and with very low resolution. Finally, the tutorial discussed challenges of implementing image super-resolution in real-world scenarios.
+				</p>
+			</div>
+		</div>
+
+        <hr>
+        <div class="abstract_sec">
+            <h2>Summary</h2>
+            <div class="desp">
+                <b>1. Prior Embedding Deep Rain Removal</b>
+                <p style="text-align:justify">
+                - Deep Joint Rain Detection and Removal From a Single Image <br>
+                - Joint Rain Detection and Removal from a Single Image with Contextualized Deep Networks <br>
+                - Erase or Fill? Deep Joint Recurrent Rain Removal and Reconstruction in Videos <br>
+                - D3R-Net: Dynamic Routing Residue Recurrent Network for Video Rain Removal <br>
+                - Attentive Generative Adversarial Network for Raindrop Removal from A Single Image <br> <br>
+                Slide: <a href="https://pan.baidu.com/s/1w9o4t2w9ByJiyZWeSwaqhA" target="_blank" title="Rain_removal_slide">Baiduyun Link</a> (password: 3u1h)
+                </p>
+            </div>
+            <div class="desp">
+                <b>2. Text-Centric Image Style Transfer</b>
+                <p style="text-align:justify">
+                - Awesome Typography: Statistics-Based Text Effects Transfer <br>
+                - Context-Aware Unsupervised Text Stylization <br>
+                - Text Effects Transfer via Stylization and Destylization <br> <br>
+                Slide: <a href="https://pan.baidu.com/s/1VfKmvjuM1FGpc5VMLemFYw" target="_blank" title="Rain_removal_slide">Baiduyun Link</a> (password: ytev)
+                </p>
+            </div>
+            <div class="desp">
+                <b>3. Prior Embedding Deep Super-Resolution</b>
+                <p style="text-align:justify">
+                - Deep Edge Guided Recurrent Residual Learning for Image Super-Resolution <br>
+                - Video Super-Resolution Based on Spatial-Temporal Recurrent Residual Networks <br> <br>
+                Slide: <a href="https://pan.baidu.com/s/16LY7p-VAJXJANBDh12_Wrw" target="_blank" title="Rain_removal_slide">Baiduyun Link</a> (password: vyqb)
+                </p>
+            </div>
+            <div class="desp">
+                <b>4. Retinex Model-Based Low Light Enhancement</b>
+                <p style="text-align:justify">
+                - Structure-Revealing Low-Light Image Enhancement Via Robust Retinex Model <br>
+                - Joint Enhancement and Denoising Method via Sequential Decomposition <br>
+                - Deep Retinex Decomposition for Low-Light Enhancement <br> <br>
+                Slide: <a href="https://pan.baidu.com/s/1VeNehXOde0P4eUds-Lwe9w" target="_blank" title="Rain_removal_slide">Baiduyun Link</a> (password: fq7w)
+                </p>
+            </div>
+        </div>
+        
+        <hr>
+        
+		<div class='citation_sec'>
+			<h2>Citation</h2>
+			<p class='bibtex'>@MISC{Enhancement_ICME2019, 
+  author={Liu, Jiaying and Yang, Wenhan and Loy, Chen Change}, 
+  title={Intelligent Image Enhancement and Restoration - from Prior Driven Model to Advanced Deep Learning}, 
+  year={2019},
+  month={July},
+  howpublished = {\url{http://timmurphy.org/2009/07/22/line-spacing-in-latex-documents/}},
+}</p>
+        </div>
+        
+        <hr>
+        
+        <div class="abstract_sec">
+            <h2>Speaker</h2>
+            <div class="desp">
+                <p style="text-align:justify">
+                <img class='keynote-bio' src='./icme_tutorial/jiayingliu.jpg' style='width:144px'>
+                <p>
+                <strong>Jiaying Liu</strong>
+                , Peking University, Beijing, China
+                </p>
+                <p>
+                <strong>Jiaying Liu</strong>
+                is currently an Associate Professor with the Institute of Computer Science and Technology, Peking University. She received the Ph.D. degree (Hons.) in computer science from Peking University, Beijing China, 2010. She has authored over 100 technical articles in refereed journals and proceedings, and holds 34 granted patents. Her current research interests include multimedia signal processing, compression, and computer vision.
+                </p>
+                <p>
+                Dr. Liu is a Senior Member of IEEE and CCF. She was a Visiting Scholar with the University of Southern California, Los Angeles, from 2007 to 2008. She was a Visiting Researcher with the Microsoft Research Asia in 2015 supported by the Star Track Young Faculties Award. She has served as a member of Multimedia Systems & Applications Technical Committee (MSA-TC), Visual Signal Processing and Communications Technical Committee (VSPC) and Education and Outreach Technical Committee (EO-TC) in IEEE Circuits and Systems Society, a member of the Image, Video, and Multimedia (IVM) Technical Committee in APSIPA. She has also served as the Technical Program Chair of IEEE VCIP-2019/ACM ICMR-2021, the Publicity Chair of IEEE ICIP-2019/VCIP-2018, the Grand Challenge Chair of IEEE ICME-2019, and the Area Chair of ICCV-2019. She was the APSIPA Distinguished Lecturer (2016-2017).
+                </p>
+                <p>
+                In addition, Dr. Liu also devotes herself to teaching. She has run MOOC Programming Courses via Coursera/edX/ChineseMOOCs, which have been enrolled by more than 60 thousand students. She is also the organizer of the first Chinese MOOC Specialization in Computer Science. She is the youngest recipient of Peking University Outstanding Teaching Award.
+                </p>
+				</p>
+			</div>
+			<div class="desp">
+				<p style="text-align:justify">
+                <img class='keynote-bio' src='./icme_tutorial/wenhanyang.jpg' style='width:144px'>
+                <p>
+                <strong>Wenhan Yang</strong>, City University of Hong Kong, Hong Kong
+                </p>
+                <p><strong>Wenhan Yang</strong>
+                is a Postdoc research fellow with the Department of Computer Science, City University of Hong Kong. Wenhan Yang received the B.S degree and Ph.D. degree (Hons.) in computer science from Peking University, Beijing, China, in 2012 and 2018. Dr. Yang was a Visiting Scholar with the National University of Singapore, from 2015 to 2016. He has authored over 30 technical articles in refereed journals and proceedings. His current research interests include deep-learning based image processing, bad weather restoration, related applications and theories.
+                </p>
+			</div>
+			<div class="desp">
+				<p style="text-align:justify">
+                <img class='keynote-bio' src='./icme_tutorial/cavanloy.jpg' style='width:144px'>
+                <p>
+                <strong>Chen Change Loy</strong>
+                , Nanyang Technological University, Singapore
+                </p>
+                <p>
+                <strong>Chen Change Loy</strong>
+                is a Nanyang Associate Professor with the School of Computer Science and Engineering, Nanyang Technological University, Singapore. He is also an Adjunct Associate Professor at the Chinese University of Hong Kong. He received his PhD (2010) in Computer Science from the Queen Mary University of London. Prior to joining NTU, he served as a Research Assistant Professor at the MMLab of the Chinese University of Hong Kong, from 2013 to 2018. He is the recipient of 2019 Nanyang Associate Professorship (Early Career Award) from Nanyang Technological University.
+                </p>
+                <p>
+                His research interests include computer vision and deep learning, with a focus on face analysis, image processing, and visual surveillance. He has published more than 100 papers in top journals and conferences of computer vision and machine learning. He and his team proposed a number of important methods for image super-resolution including SRCNN, SFTGAN and ESRGAN. As a co-author, his journal paper on SRCNN was selected as the `Most Popular Article' by IEEE Transactions on Pattern Analysis and Machine Intelligence in 2016. It remains as one of the top 10 articles to date. ESRGAN has been widely used to remaster various classic games such as Half-Life, Resident Evil 2, Morrowind, and Final Fantasy 7.
+                </p>
+                <p>
+                He serves as an Associate Editor of the International Journal of Computer Vision (IJCV) and IET Computer Vision Journal. He also serves/served as the Area Chair of CVPR 2019, BMVC 2019, ECCV 2018, and BMVC 2018. He is a senior member of IEEE.
+                </p>
+            </div>            
+        </div>
+
+        <hr>
+        
+        <!--<div>
+          <h2>Reference</h2>
+            <p>[1]. L. Ma, X. Jia, Q. Sun, B. Schiele, T. Tuytelaars, and L. Van Gool. Pose guided person image generation. In NIPS, 2017.</p>
+            <p>[2]. A. Siarohin, E. Sangineto, S. Lathuili`ere, and N. Sebe. Deformable gans for pose-based human image generation. In CVPR, 2018. </p>
+            <p>[3]. A. Pumarola, A. Agudo, A. Sanfeliu, and F. Moreno-Noguer. Unsupervised person image synthesis in arbitrary poses. In CVPR, 2018.</p>
+            <p>[4]. P. Esser, E. Sutter, and B. Ommer. A variational u-net for conditional appearance and shape generation. In CVPR, 2018.</p>
+            <p>[5]. A. Hertzmann. Image analogies. Proc Siggraph, 2001.</p>
+            <p>[6]. A. J. Champandard. Semantic style transfer and turning two-bit doodles into fine artworks. arXiv preprint arXiv: 1603.01768, 2016. </p>
+        <hr>        
+        </div>-->
+	    <p class="banner" align="center">Last update: July 2019</p>
+	
+  </div>
+</div>
+
+
+</body></html>
