@@ -1,0 +1,148 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0055)http://www.icst.pku.edu.cn/course/icb/Projects/oad.html -->
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="language" content="english">
+<title>A Comprehensive Benchmark for Single Image Compression Artifacts Reduction</title>
+<link rel="stylesheet" type="text/css" href="./css/project.css">
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+</head>
+
+<body>
+<div id="main">
+  
+	<div class="content"><br>
+		<h1>A Comprehensive Benchmark for Single Image <br> Compression Artifacts Reduction</h1>
+		<div class="authors">
+		
+        	<div class="author">
+				 <a href="" style="text-decoration: none">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</a>
+			</div>
+			<div class="author">
+				 Jiaying Liu
+			</div>  
+			<div class="author">
+				 Dong Liu
+			</div>  
+			<div class="author">
+				 Wenhan Yang
+			</div>  
+			<div class="author">
+				 Sifeng Xia
+			</div>  
+			<div class="author">
+				 Xiaoshuai Zhang
+			</div>    
+			<div class="author">
+				 Yuanying Dai
+			</div> 
+			
+		</div>
+		<br>
+	  	<p class="banner" align="center"><i>Submitted to TIP</i>, 2019. </p>
+
+
+		<div class="Abstract sec">
+			<h2>Abstract</h2>
+			<div class="desp">
+				<p style="text-align:justify">
+				 We present a comprehensive study and evaluation of
+existing single image compression artifacts removal algorithms,
+using a new 4K resolution benchmark including diversified
+foreground objects and background scenes with rich structures,
+called Large-scale Ideal Ultra high definition 4K (LIU4K)
+benchmark. Compression artifacts removal, as a common postprocessing
+technique, aims at alleviating undesirable artifacts
+such as blockiness, ringing, and banding caused by quantization
+and approximation in the compression process. In this work, a
+systematic listing of the reviewed methods is presented based
+on their basic models (handcrafted models and deep networks).
+The main contributions and novelties of these methods are
+highlighted, and the main development directions, including
+architectures, multi-domain sources, signal structures, and new
+targeted units, are summarized. Furthermore, based on a unified
+deep learning configuration (i.e. same training data, loss
+function, optimization algorithm, etc.), we evaluate recent deep
+learning-based methods based on diversified evaluation measures.
+The experimental results show the state-of-the-art performance
+comparison of existing methods based on both full-reference,
+non-reference and task-driven metrics. Our survey would give
+a comprehensive reference source for future research on single
+image compression artifacts removal and inspire new directions
+of the related fields.</p>
+			</div>
+            <h2>Dataset Overview</h2>
+			<div align="center" id="overview">
+		  		<img src="./img/overviewa.png" width="100%">
+		  		<p style="text-align: justify">Figure. 1. Example training set images sampled from LIU4K.
+		</div>
+		
+		<div align="center" id="overview">
+		  		<img src="./img/overviewb.png" width="80%">
+		  		<p style="text-align: justify">Figure. 2. Example testing set images sampled from LIU4K.
+		</div>
+		
+		<h2>Objective Results</h2>
+		<div align="center" id="res">
+		  		<p style="text-align: center">Table 1: Objective evaluations of different methods on liu4k for compression artifacts reduction. <br> The value in red, and blue colors denote the first, and second best results, respectively.
+			<img src="./img/tab.PNG" width="80%">
+		</div>
+
+		<h2>Subjective Results</h2>
+		<div align="center" id="sres">
+			<img src="./img/sub.PNG" width="80%">
+			<p style="text-align: center">Figure. 3. Examples of restored results on a compressed image by JPEG from LIU4K (QF=10).
+		</div>
+
+		  	<style type="text/css">
+.tg  {border-collapse:collapse;border-spacing:0;}
+.tg td{font-family:Arial, sans-serif;font-size:14px;padding:5px 15px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:black;}
+.tg th{font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:0px 0px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:black;}
+.tg .tg-s6z2{text-align:center}
+</style>
+	
+</div>
+
+		<div class="download sec">
+			<h2>Download</h2>
+			<div>
+				<li><strong><a href="Liu4k.html">Paper</a></strong>  </li>
+				<li><strong><a href="Liu4k.html">Results</a></strong>  </li>
+				<li><strong><a href="Liu4k.html">Code</a></strong>  </li>
+				<!--<li><strong>Supplementary Material</strong>: <a href="http://www.icst.pku.edu.cn/course/icb/Projects/MALDEC_files/files/supp.pdf">pdf</a></li>-->
+			</div>
+		</div>
+
+	  <div class="citation sec">
+			<h2>Citation</h2>
+			<p class="bibtex">@inproceedings{Liu4K, 
+&nbsp;&nbsp; author={J. Liu and D. Liu and W. Yang and S. Xia and X. Zhang and Y. Dai}, 
+&nbsp;&nbsp; booktitle={arXiv}, 
+&nbsp;&nbsp; title={A Comprehensive Benchmark for Single Image Compression Artifacts Reduction}, 
+&nbsp;&nbsp; year={2019}, 
+&nbsp;&nbsp; }
+			</p>
+	  </div>
+
+<!-- 		<div class="experiments sec">
+			<h2>Additional Results</h2>
+			<div id="images">
+				<h3>Action Detection Performance</h3>
+				<div align="center" id="table">
+					<p>Table 1. F 1−Score on OAD dataset</p>
+					<img src='OAD/figures/OAD_table.png' width='50%' >
+				</div>
+			</div>
+		</div>
+		<br></br> -->
+
+
+<div class="citation sec">
+    <h2>&nbsp;</h2>
+    </div>
+  </div>
+</div>
+
+
+</body></html>
