@@ -1,155 +1,137 @@
-
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
-<!-- saved from url=(0055)http://www.icst.pku.edu.cn/course/icb/Projects/oad.html -->
-<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<meta name="language" content="english">
-<title>A Comprehensive Benchmark for Single Image Compression Artifacts Reduction</title>
-<link rel="stylesheet" type="text/css" href="./css/project.css">
-<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-</script>
-</head>
-
-<body>
-<div id="main">
-  
-	<div class="content"><br>
-		<h1>Single Image Deraining: From Model-Based to Data-Driven <br> and Beyond</h1>
-		<div class="authors">
+<!DOCTYPE html>
+<!-- saved from url=(0057)http://www.icst.pku.edu.cn/struct/people/yangs/index.html -->
+<html class="csstransforms csstransforms3d csstransitions"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 		
-        	<div class="author">
-				 <a href="" style="text-decoration: none">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</a>
+		<title>Wenhan Yang</title>
+		<link href="./WenhanYang_files/bootstrap.css" rel="stylesheet" type="text/css" media="all">
+		<link href="./WenhanYang_files/style.css" rel="stylesheet" type="text/css" media="all">
+		<link href="./WenhanYang_files/prettyPhoto.css" rel="stylesheet" type="text/css" media="all">		
+		<link href="./WenhanYang_files/css" rel="stylesheet" type="text/css">	
+	</head>
+	<body>
+		<!---start-wrap--->
+		<!---start-header--->
+	<div class="header">
+		<div class="wrap">
+			<!---start-logo--->
+			<div class="logo">
+				<a href="./index.html">Wenhan (David) Yang</a>
 			</div>
-			<div class="author">
-				 Wenhan Yang
-			</div>  
-			<div class="author">
-				 Robby T. Tan
-			</div>  
-			<div class="author">
-				 Shiqi Wang
-			</div>  
-			<div class="author">
-				 Yuming Fang
-			</div>  
-			<div class="author">
-				 Jiaying Liu
+			<!---End-logo--->
+			<!---start-top-nav--->
+			<div class="top-nav">
+				<ul>
+					<li id="Home" onclick="func(&#39;Me&#39;)"><a href="./index.html" class="scroll">Home</a></li>
+					<li id="Profile" onclick="func(&#39;Experience&#39;)"><a href="./index.html" class="scroll">Profile</a></li>
+					<li id="Research" onclick="func(&#39;Research&#39;)"><a href="./index.html" class="scroll">Research</a></li>
+					<li id="Publications" onclick="func(&#39;Publications&#39;)"><a href="./Publication.html" class="scroll">Publications</a></li>
+                    <li id="Talks" onclick="func(&#39;Publications&#39;)"><a href="./index.html" class="scroll">Talks</a></li>
+					<!-- <li id="Art" onclick="func(&#39;Art&#39;)"><a href="http://www.icst.pku.edu.cn/struct/people/yangs/index.html#art" class="scroll">Art Gallery</a></li>	-->
+					<li id="Contact" onclick="func(&#39;Contact&#39;)"><a href="./Contact.html" class="scroll">Contact</a></li>
+				</ul>
 			</div>
-			
-		</div>
-		<br>
-	  	<p class="banner" align="center">In Submission, December, 2019. </p>
-
-
-		<div class="Abstract sec">
-			<h2>Abstract</h2>
-			<div class="desp">
-				<p style="text-align:justify">
-				Rain removal or deraining methods attempt to restore the clean background scenes from images degraded by rain streaks and rain accumulation (or rain veiling effect). The early single-image deraining methods employ optimization methods on a cost function, where various priors are developed to represent the properties of rain and background-scene layers. Since 2017, single-image deraining methods step into a deep-learning era. They are built on deep-learning networks, i.e. convolutional neural networks, recurrent neural networks, generative adversarial networks, etc., and demonstrate impressive performance. Given the current rapid development, this article provides a comprehensive survey of deraining methods over the last decade. The rain appearance model are first summarized, and then followed by the discussion on two categories of deraining approaches: model-based and data-driven approaches. For the former, we organize the literature based on their basic models and priors. For the latter, we discuss several ideas on deep learning, i.e., models, architectures, priors, auxiliary variables, loss functions, and training datasets. This survey presents milestones in cuttingedge single-image deraining methods, reviews a broad selection of previous works in different categories, and provides insights on the historical development route from the model-based to data-driven methods. It also provides performance comparisons quantitatively and qualitatively. Beyond discussing existing deraining methods, we also discuss future directions and trends.
-            </p>
-			</div>
-            <h2>Method Review</h2>
-			<div align="center" id="overview">
-		  		<img src="./img/Framework.png" width="100%">
-		  		<p style="text-align: justify">Fig. 1. Milestones of single image rain removal methods, including sparse coding, Gaussian mixture model, deep convolutional network, generative adversarial network, semi/un-supervised learning, and benchmark.
-		</div>
-		
-		<div align="center" id="overview">
-		  		<img src="./img/Improvement.png" width="100%">
-		  		<p style="text-align: justify">Fig. 2. The improvement of single-image rain removal, from model-based methods to data-driven approaches.
-		</div>
-
-		<div align="center" id="overview">
-		  		<img src="./img/Net_Improvement.png" width="100%">
-		  		<p style="text-align: justify">Fig. 3. Summary of the side information and priors for single-image rain removal.
-		</div>
-
-		<div align="center" id="overview">
-		  		<img src="./img/Side_Information.png" width="100%">
-		  		<p style="text-align: justify">Fig. 4. The basic block improvement route for single-image rain removal.
-		</div>
-
-        <h2>Rain Synthetic Model Review</h2>
-		<div align="center" id="overview">
-		  		<img src="./img/Rain_Model.png" width="100%">
-		</div>
-        
-        <h2>Dataset Review</h2>
-		<div align="center" id="overview">
-		  		<img src="./img/Table_dataset.png" width="100%">
-		</div>
-        
-		<h2>Quantitative Evaluation</h2>
-		<div align="center" id="res"> 
-			<img src="./img/Performance.png" width="100%">
-            <p style="text-align: center">Fig. 10. The objective results of different methods. Top panel: PSNR. Bottom panel: SSIM. All methods are sorted by year. A red curve <br> connects the top performance from 2015 to 2019. It is shown that, the objective performance gains converge gradually.
-		</div>
-        For quantitative results, please refer to another excellent review paper for rain and video deraining [54].
-        
-		<h2>Qualitative Evaluation</h2>
-		<div align="center" id="sres">
-			<img src="./img/Subjective_result.png" width="100%">
-			<p style="text-align: center">Fig. 12. Visual results of different methods. 1st and 2nd panels: rain images with large rain streaks. 3th and 4th panels: rain images including rain accumulation. 5th panel: rain images including both large rain streaks and accumulation.
-		</div>
-		<div align="center" id="sres">
-			<p style="text-align: center">Table 6. The no-reference metric results of different methods. Heavy denotes HeavyRainRemoval. Red, blue, and green denote the best, second best, and third best results.</p>        
-			<img src="./img/Subjective_result_table.png" width="100%">
-		</div>
-        
-		  	<style type="text/css">
-.tg  {border-collapse:collapse;border-spacing:0;}
-.tg td{font-family:Arial, sans-serif;font-size:14px;padding:5px 15px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:black;}
-.tg th{font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:0px 0px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:black;}
-.tg .tg-s6z2{text-align:center}
-</style>
+			<div class="clear"> </div>
+			<!---End-top-nav--->
+	     </div>
+	</div>
 	
-</div>
-
-		<div class="download sec">
-			<h2>Download</h2>
-			<div>
-				<li><strong><a href="index.html">Paper</a></strong>  </li>
-				<li><strong><a href="index.html">Results</a></strong>  </li>
-				<li><strong><a href="index.html">Code</a></strong>  </li>
-				<!--<li><strong>Supplementary Material</strong>: <a href="http://www.icst.pku.edu.cn/course/icb/Projects/MALDEC_files/files/supp.pdf">pdf</a></li>-->
+	<script> 
+	var lastname = 'Me';
+	function func(name){
+		var div = document.getElementById(name); 
+		div.className = 'active'; 
+		div = document.getElementById(lastname); 
+		div.className = ''; 
+		lastname = name;
+	}
+	function coming_soon()
+	{
+		alert("Coming soon.");
+	}
+	</script> 
+	
+		<!---End-wrap--->
+	<div class="content">
+		<div class="grid1" id="me">
+			<div class="welcome-photo">
+				<a class="welcome-photo1"><img id="me1" src="./WenhanYang_files/WenhanYang.jpg" title="name"></a>
 			</div>
+			<h3>Wenhan Yang (杨文瀚)</h3>
+            <br>
+			<p align="left"> 
+            He received his PhD (Sep, 2018) in Computer Application Technology from Peking University. 
+            From September 2012 – September 2018, he was a Ph.D. candidate in Institute of Computer Science &amp; Technology of Peking University (<a href="http://www.icst.pku.edu.cn/"><strong>ICST</strong></a>). He was a member of Spatial and Temporal Restoration Understanding and Compression Team (<a href="http://www.icst.pku.edu.cn/struct/"><strong>STRUCT</strong></a>) at ICST. <a href="./att/CV Wenhan Yang 2018-1121.pdf">[<b>CV</b>]</a> </p> 
 		</div>
-
-		<div class="download sec">
-			<h2>Reference</h2>
-			<div>
-				<p>[54] H. Wang, Y. Wu, M. Li, Q. Zhao, and D. Meng, "A Survey on Rain Removal from Video and Single Image," arXiv eprints, p. arXiv:1909.08326, Sep 2019.</p>
+		<div class="grid3" id="experience" >
+			<div class="grid3-header">
+				<h3 align='left'>Highlights</h3>
 			</div>
-		</div>
-
-	  <div class="citation sec">
-			<h2>Citation</h2>
-			<p class="bibtex">@inproceedings{Single_image_rain_survey, 
-&nbsp;&nbsp; author={Wenhan Yang, Robby T. Tan, Shiqi Wang, Yuming Fang, and Jiaying Liu}, 
-&nbsp;&nbsp; booktitle={arXiv}, 
-&nbsp;&nbsp; title={Single Image Deraining: From Model-Based to Data-Driven and Beyond}, 
-&nbsp;&nbsp; year={2019}, 
-&nbsp;&nbsp; }
-			</p>
-	  </div>
-
-<!-- 		<div class="experiments sec">
-			<h2>Additional Results</h2>
-			<div id="images">
-				<h3>Action Detection Performance</h3>
-				<div align="center" id="table">
-					<p>Table 1. F 1−Score on OAD dataset</p>
-					<img src='OAD/figures/OAD_table.png' width='50%' >
+			<div class="grid3-content"  style="align:left;width:85%">
+				<div class="grid3-content">
+					<ul class="graid3-ul" style="align:left;list-style: disc;">
+			<!-- <li> [Announcement] 03/2019, I still noticed that, 
+			some recent papers mention that, Rain100L and Rain100H include some overlapped backgournd images or wrong number of images. 
+			I need to mention that, the datasets online before Nov. 2018 might be not the correct one. 
+			I have updated the correct one in the <a href="http://www.icst.pku.edu.cn/struct/Projects/joint_rain_removal.html">project link</a> after that.
+			There are no backgournd images overlapped in the training and testing sets. The numbers of training images in Rain100L and Rain100H are both 1800.
+			Thanks for my colleages (Xia Li at PKU and Renjie Wan at NTU) helping me correct the issue. 
+			If you have used the datasets online before Nov. 2018, 
+			I think it is a reasonable remedy to manually screen out the overlapped background images as Dongwei Ren does in <a href="https://arxiv.org/pdf/1901.09221.pdf">PReNet</a>.
+			If you have still questions or need help, please do not hesitate to contact with me. -->
+			<li> [Publication] 12/2019, One paper accepted to <i>IEEE TMM</i>. </li>
+			<li> [Publication] 11/2019, Two papers accepted to <i>AAAI-2020</i>. </li>
+			<li> [Publicity & Service] 11/2019, I will co-organize the workshop and chanllenge: "Bridging the Gap between Computational Photography and Visual Recognition (the 3rd UG2+)", in conjunction with IEEE CVPR 2020. </li>			
+			<li> [Publication] 05/2019, One paper accepted to <i>IEEE TMM</i>. </li>
+			<li> [Publicity & Service] 05/2019, I will co-organize the chanllenge: "Face detection in low-light conditions", in conjunction with ChinaMM 2019, jointly with Prof. Jiaying Liu, and Prof. Dong Liu. </li>
+			<li> [Publication] 02/2019, One paper accepted to <i>IEEE CVPR-2019</i>. </li>
+			<li> [Publication] 01/2019, One paper accepted to <i>IEEE TPAMI</i>. </li>
+			<li> [Publication] 01/2019, One paper accepted to <i>IEEE TIP</i>. </li>
+			<li> [Publicity & Service] 12/2018, I will co-organize the workshop and chanllenge: "Bridging the Gap between Computational Photography and Visual Recognition (UG2+)", in conjunction with IEEE CVPR 2019, jointly with Prof. Walter Scheirer, Prof. Zhangyang Wang, Prof. Jiaying Liu, and Prof. Wenqi Ren. </li>
+			<li> [Travel & Talk] 12/2018, I attended VCIP-2018, in Taichung, Taiwan, gave the tutorial "Intelligent Image/Video Editing", jointly with Prof. Jiaying Liu, and presented our work "Optimized Spatial Recurrent Network for Intra Prediction in Video Coding". </li>
+			<li> [Publicity & Service] 11/2018, Our tutorial (Jointly with Prof. Jiaying Liu and Prof. Chen Change Loy), "<a href="http://www.icme2019.org/conf_tutorials" ;="">Intelligent Image Enhancement and Restoration - from Prior Driven Model to Advanced Deep Learning</a>", was accepted by <i>ICME 2019</i>, July 8-12, 2019, Shanghai, China. </li>
+			<li> [Publication] 11/2018, One paper accepted to <i>IEEE TIP</i>. </li>
+			<li> [Publication] 09/2018, Two papers accepted to <i>IEEE TIP</i>. </li>
+                        <li> [Publication] 07/2018, One paper accepted to <i>ACM MM-2018</i> as the Oral presentation. </li>
+			<li> [Publication] 07/2018, One paper accepted to <i>BMVC-2018</i> as the Oral presentation. </li>			
+                        <li> [Travel & Talk] 07/2018, I was an invited speaker at a colloquium on aviation, aerospace and navigation to share our works on Intelligence Image Editing, held by China Academy of Space Technology, Changsha, China. </li>
+                        <li> [Honor & Awards] 07/2018, My doctorate dissertation won the 2018 Distinguished Paper of Peking University.
+			<li> [Travel & Talk] 06/2018, I attended <i>CVPR</i> 2018, in Salt Lake City, Utah, to present one challenge runner-up summary and two posters. </li>
+                        <li> [Announcement] 06/2018, I passed my final defense and received my Ph.D. degree from Peking University. My thesis title is: "Research on Learning-Based Image Reconstruction". </li>
+                        <li> [Travel & Talk] 06/2018, I was an invited speaker at a colloquium to share our <i>CVPR</i> works, held by Artificial Intelligence Innovation Center, Peking University, Beijing, China. </li>
+                        <li> [Honor & Awards] 05/2018, TAMU-PKU team won the <i>CVPR</i> 2018 UG2 Prize Challenge!
+                        <li> [Publicity & Service] 05/2018, Our tutorial, "Intelligent Image/Video Editing", was accepted by <i>VCIP 2018</i>, December 9-12, 2018, Taichung, Taiwan. </li>
+                        <li> [Announcement] 05/2018, I was honored and humbled to be nominated as a candidate of 2018 Top 10 Outstanding Research Award in Peking University. </li>
+			<li> [Publication] 05/2018, One paper accepted to <i>IEEE TCSVT</i>. </li>
+                        <li> [Publication] 02/2018, One paper accepted to <i>IEEE ICIP-2018</i>.</li>
+                        <li> [Publication] 02/2018, Two papers accepted to <i>IEEE CVPR-2018</i>.</li>
+                        <li> [Publication] 02/2018, One paper accepted to <i>IEEE TIP</i>.</li>
+                        <li> [Publication] 01/2018, One paper accepted to <i>IEEE ISCAS-2018</i>.</li>
+                        <li> [Publication] 12/2017, Two papers accepted to <i>DCC-2018</i>.</li>
+					</ul>
 				</div>
-			</div>
+			</div>			
 		</div>
-		<br></br> -->
 
 
-<div class="citation sec">
-    <h2>&nbsp;</h2>
-    </div>
-  </div>
-</div>
+		<!-- <div class="grid2" id="contact">
+			<div class="grid2-content">
+				<p>Contact Email: williamyang AT pku.edu.com</p>			
+			</div>			
+		</div> -->
+		<div class="footer">
+            <p>Updated June 2018 
+            <!--2018 Shuai Yang. Powered by <a href="http://w3layouts.com/">w3layouts</a>, <a href="http://www.no-margin-for-errors.com/projects/prettyphoto-jquery-lightbox-clone/">prettyPhoto</a>, <a href="http://getbootstrap.com/2.3.2/">bootstrap</a>, <a href="http://isotope.metafizzy.co/">Isotope</a>-->
+            </p>
+		</div> 
+	</div>
+	
+		<script type="text/javascript" src="./WenhanYang_files/jquery.min.js.下载"></script>
+		<script type="text/javascript" src="./WenhanYang_files/bootstrap.js.下载"></script>
+		<script type="text/javascript" src="./WenhanYang_files/jquery.banner.js.下载"></script>
+		<script type="text/javascript" src="./WenhanYang_files/jquery.prettyPhoto.js.下载"></script>		
+		<script type="text/javascript" src="./WenhanYang_files/jquery.isotope.js.下载"></script>	
+		<script type="text/javascript" src="./WenhanYang_files/main.js.下载"></script>				
+	
 
 
 </body></html>
