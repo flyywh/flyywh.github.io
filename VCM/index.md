@@ -2,7 +2,7 @@
 
 **A curated list of VCM resources and approaches.**
 
-**This list is maintained by: [[STRUCT]](http://www.icst.pku.edu.cn/struct/struct.html) PKU (PI: Prof. Jiaying Liu) and [[IMRE]](http://imre.idm.pku.edu.cn/index.html) (PI: Prof. Ling-Yu Duan)**
+**This list is maintained by: [[IMRE]](http://imre.idm.pku.edu.cn/index.html) (PI: Prof. Ling-Yu Duan) and [[STRUCT]](http://www.icst.pku.edu.cn/struct/struct.html) PKU (PI: Prof. Jiaying Liu)**
 
 ## Works Done by STRUCT and IMRE
 #### Survey
