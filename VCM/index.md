@@ -22,10 +22,10 @@
    * Toward intelligent visual sensing and low-cost analysis: A collaborative computing approach (VCIP 2019), Y. Bai, L. Duan, Y. Luo, S. Wang, Y. Wen, and W. Gao.
 
 #### Feature Compression
- * CSVA [[Web]]() [[PDF]]()
+ * CDVA [[Web]]() [[PDF]]()
    * Compact descriptors for video analysis: The emerging MPEG standard (IEEE TMM 2019), L.-Y. Duan, Y. Lou, Y. Bai, T. Huang, W. Gao, V. Chandrasekhar, J. Lin, S. Wang, and A. C. Kot.
    
- * CSVS [[Web]]() [[PDF]]()
+ * CDVS [[Web]]() [[PDF]]()
    * Overview of the MPEG-CDVS standard (IEEE TIP 2016), L.-Y. Duan, V. Chandrasekhar, J. Chen, J. Lin, Z. Wang, T. Huang, B. Girod, and W. Gao.
 
 ## A Comprehensive List of Related Work
