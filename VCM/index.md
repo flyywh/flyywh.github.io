@@ -30,19 +30,23 @@
 
 ## A Comprehensive List of Related Work
 #### Human-Machine Colloborative Coding
- * VCM Survey [[Web]]() [[Code]]() [[PDF]]()
-   * Video Coding for Machines: A Paradigm of Collaborative Compression and Intelligent Analytics (Arxiv 2020), Ling-Yu Duan, Jiaying Liu, Wenhan Yang, Tiejun Huang, Wen Gao.
-
+ * Scalable Facial Image Compression  [[Web]]() [[Code]]() [[PDF]]()
+   * Scalable Facial Image Compression with Deep Feature Reconstruction (ICIP 2019), Shurun Wang, Shiqi Wang, Xinfeng Zhang, Shanshe Wang, Siwei Ma, Wen Gao.
+ 
 #### Scalable Coding
- * VCM Survey [[Web]]() [[Code]]() [[PDF]]()
-   * Video Coding for Machines: A Paradigm of Collaborative Compression and Intelligent Analytics (Arxiv 2020), Ling-Yu Duan, Jiaying Liu, Wenhan Yang, Tiejun Huang, Wen Gao.
+ * Hierarchical Feature Decorrelation [[Web]]() [[Code]]() [[PDF]]()
+   * Deep Scalable Image Compression via Hierarchical Feature Decorrelation (PCS 2019), Zongyu Guo, Zhizheng Zhang, Zhibo Chen.
 
 #### Feature Compression
  * VCM Survey [[Web]]() [[Code]]() [[PDF]]()
    * Video Coding for Machines: A Paradigm of Collaborative Compression and Intelligent Analytics (Arxiv 2020), Ling-Yu Duan, Jiaying Liu, Wenhan Yang, Tiejun Huang, Wen Gao.
    
 #### Spike Coding
-
+ * Intelligent Driving [[Web]]() [[Code]]() [[PDF]]()
+   * Spike coding for dynamic vision sensor in intelligent driving (IEEE Internet of Things Journal 2019), S. Dong, Z. Bi, Y. Tian, and T. Huang.
+ * Inter-Spike Intervals [[Web]]() [[Code]]() [[PDF]]()
+   * An efficient coding method for spike camera using inter-spike intervals (DCC 2019), S. Dong, L. Zhu, D. Xu, Y. Tian, and T. Huang. 
+   
 #### Video Generation and Prediction
  * Video Prediction without Supervision [[Web]]() [[Code]]() [[PDF]]()
    * Hierarchical Long-term Video Prediction without Supervision (Arxiv 2018), N. Wichers, R. Villegas, D. Erhan, and H. Lee.
