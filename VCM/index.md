@@ -1,4 +1,4 @@
-# Video Coding for Machine (State-of-the-art)
+# Video Coding for Machine
 
 **A curated list of VCM resources and approaches.**
 
