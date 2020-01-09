@@ -46,6 +46,8 @@
    * Spike coding for dynamic vision sensor in intelligent driving (IEEE Internet of Things Journal 2019), S. Dong, Z. Bi, Y. Tian, and T. Huang.
  * Inter-Spike Intervals [[Web]]() [[Code]]() [[PDF]]()
    * An efficient coding method for spike camera using inter-spike intervals (DCC 2019), S. Dong, L. Zhu, D. Xu, Y. Tian, and T. Huang. 
+ * Lossy Compression [[Web]]() [[Code]]() [[PDF]]()
+   * Spike coding: Towards lossy compression for dynamic vision sensor (DCC 2019), Y. Fu, J. Li, S. Dong, Y. Tian, and T. Huang.
    
 #### Video Generation and Prediction
  * Video Prediction without Supervision [[Web]]() [[Code]]() [[PDF]]()
