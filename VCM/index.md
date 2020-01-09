@@ -20,7 +20,7 @@
    * Toward intelligent visual sensing and low-cost analysis: A collaborative computing approach (VCIP 2019), Y. Bai, L. Duan, Y. Luo, S. Wang, Y. Wen, and W. Gao.
 
 #### Feature Compression
- * CSVA Coding [[Web]](https://williamyang1991.github.io/projects/VCM-Face/) [[PDF]]()
+ * CSVA [[Web]](https://williamyang1991.github.io/projects/VCM-Face/) [[PDF]]()
    * Compact descriptors for video analysis: The emerging MPEG standard (IEEE TMM 2019), L.-Y. Duan, Y. Lou, Y. Bai, T. Huang, W. Gao, V. Chandrasekhar, J. Lin, S. Wang, and A. C. Kot.
 
 
