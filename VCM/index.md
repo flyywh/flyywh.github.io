@@ -6,7 +6,7 @@
 
 ## Works Done by STRUCT and IMRE
 #### Survey
- * VCM Survey [[Web]]() [[Code]]() [[PDF]]()
+ * VCM Survey [[Web]]() [[PDF]]()
    * Video Coding for Machines: A Paradigm of Collaborative Compression and Intelligent Analytics (Arxiv 2020), Ling-Yu Duan, Jiaying Liu, Wenhan Yang, Tiejun Huang, Wen Gao.
 
 #### Human-Machine Colloborative Coding
