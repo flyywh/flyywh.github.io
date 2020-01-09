@@ -36,3 +36,10 @@
 #### Feature Compression
  * VCM Survey [[Web]]() [[Code]]() [[PDF]]()
    * Video Coding for Machines: A Paradigm of Collaborative Compression and Intelligent Analytics (Arxiv 2020), Ling-Yu Duan, Jiaying Liu, Wenhan Yang, Tiejun Huang, Wen Gao.
+   
+#### Spike Coding
+
+#### Video Generation and Prediction
+ * Video Prediction without Supervision [[Web]]() [[Code]]() [[PDF]]()
+   * Hierarchical Long-term Video Prediction without Supervision (Arxiv 2018), N. Wichers, R. Villegas, D. Erhan, and H. Lee.
+
