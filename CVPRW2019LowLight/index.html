@@ -189,13 +189,9 @@
 
 	<div class="affiliations">
 	  <a href="http://39.96.165.147/struct.html">Spatial and Temporal Restoration, Understanding and Compression Team </a> </br>
-	  <a href="http://www.icst.pku.edu.cn/">Institue of computer science and technology, </a>
+	  <a href="http://www.icst.pku.edu.cn/">Wangxuan institute of computer technology, </a>
 	  <a href="https://www.pku.edu.cn/">Peking University</a>
 	</div>
-	<ul id="tabs">
-    	<li><a href="http://mmlab.ie.cuhk.edu.hk/projects/WIDERFace/index.html" name="#tab1">Home</a></li>
-    </a></li>  
-	</ul> 
     </div>
 
     <center><img src="./DARK FACE_ Face Detection in Low Light Condition_files/intro.png" border="0" width="90%"></center>
@@ -209,7 +205,8 @@
 	<li><strong>2019-03-15</strong> The dataset is released.</li>
 	<li><strong>2019-03-26</strong> Dataet updated. The issue that one image in the training set cannot be read has been addressed.</li>
 	<li><strong>2019-05-12</strong> New versions of evaluation tools online. Some bugs are fixed.</li>
-	</ul>	
+	<li><strong>2021-06-14</strong> Please refer to <a href='http://cvpr2021.ug2challenge.org/'>[UG2+ Challenge]</a> for the lastest progress.</li>
+	</ul>
 	<p></p>
 	</div>
 	
@@ -223,63 +220,13 @@
 	<h2 id="Download">Download</h2>  	
 	<p>
 	</p><ul>
-	<li>DARK FACE training and validation images: <a href='https://drive.google.com/drive/folders/18AfF8kT9HLfaIfhuMiOjks_pitdpceqM?usp=sharing'>[Google Drive]</a><a href='https://pan.baidu.com/s/1j79h6sS_r5SCsXZIMvc3VQ'>[Baiduyun]</a>(Extracted Code: 2ij4)</li>
-	<li>DARK FACE sample testing images:          <a href='https://drive.google.com/open?id=10LyMfzCHBi5AIrl-ixFmMF6N4PkV-VuC'>[Google Drive]</a><a href='https://pan.baidu.com/s/1JJ6wVigW6ifPShpj3SM2oQ'>[Baiduyun]</a>(Extracted Code: chle)</li>
+	<li>DARK FACE training/validation images and labels: <a href='https://drive.google.com/file/d/10W3TDvEAlZfEt88hMxoEuRULr42bIV7s/view'>[Google Drive]</a><a href='https://pan.baidu.com/s/1oSUwsq457eMMCnSSp7gGRQ'>[Baiduyun]</a>(Extracted Code: babu)</li>
+	<li>DARK FACE sample testing images:          <a href='https://drive.google.com/file/d/1MLeLUf8H4CqvWUoSn5TePqRWznueWvig/view?usp=sharing'>[Google Drive]</a><a href='https://pan.baidu.com/s/1Fq0zyIJ0QPOcY3vqh427BQ'>[Baiduyun]</a>(Extracted Code: 429h)</li>
 	<li>DARK FACE evaluation tool code：          <a href='https://github.com/Ir1d/DARKFACE_eval_tools'>[Code]</a></li>
 	<li>DARK FACE evaluation tool docker：        <a href='https://hub.docker.com/r/scaffrey/eval_tools'>[Docker]</a></li>
-	<!-- <li>Face annotations</a></li>
-	<li>Examples and formats of the submissions</a></li> -->
 	</ul>	
 	<p></p>
 	</div>
-
-	<!--<div class="section Benchmark">
-	<h2 id="Benchmark">Benchmark</h2>  	
-	<p>
-	For details on the evaluation scheme please refer to the <a href="http://arxiv.org/abs/1511.06523">technical report</a>.
-	<br>
-	For detection resutls please refer to the <a href="http://mmlab.ie.cuhk.edu.hk/projects/WIDERFace/WiderFace_Results.html">result page</a>.
-	</p>
-	<p>
-	</p><ul>
-	<li>
-	<font color="red"><i><b>Scenario-Ext</b></i></font>: A face detector is trained using any external data, and tested on the WIDER FACE test partition.
-	</li>
-	<li>
-	<font color="red"><i><b>Scenario-Int</b></i></font>: A face detector is trained using WIDER FACE training/validation partitions, and tested on WIDER FACE test partition.
-	</li>
-	</ul>
-	<p></p>
-
-	</div>
-
-	<div class="section submission">
-	<h2 id="Submission">Submission</h2>  	
-	<p>	
-	Please contact us to evaluate your detection results. An evaluation server will be available soon. <br> 
-	The detection result for each image should be a text file, with the same name of the image. The detection results are organized by the event categories. For example, if the directory of a testing image is "./0--Parade/0_Parade_marchingband_1_5.jpg", the detection result should be writtern in the text file in "./0--Parade/0_Parade_marchingband_1_5.txt". The detection output is expected in the follwing format:
-	<br>
-	...
-	<br>
-	&lt; image name i &gt;
-	<br>
-	&lt; number of faces in this image = im &gt;
-	<br>
-	&lt; face i1 &gt;
-	<br>
-	&lt; face i2 &gt;
-	<br>
-	...
-	<br>
-	&lt; face im &gt;
-	<br>
-	...
-	<br>
-	Each text file should contain 1 row per detected bounding box, in the format "[left, top, width, height, score]". 
-	Please see the output example files and the README if the above descriptions are unclear.
-	</p>
-	</div>-->
-
 
 	<div class="section Related Datasets">
 	<h2 id="Related Datasets">Related Datasets</h2>  	
@@ -295,18 +242,17 @@
 	<div class="section bibtex">
 	<h2 id="Citation">Citation</h2>
 	<pre>
-@ARTICLE{2019arXiv190404474Y,
-       author = {Yuan, Ye and Yang, Wenhan and Ren, Wenqi and Liu, Jiaying and Scheirer, Walter 
-       J. and Wang, Zhangyang},
-       title = "{UG+ Track 2: A Collective Benchmark Effort for Evaluating and Advancing Image 
-       Understanding in Poor Visibility Environments",
-       journal = {arXiv e-prints},
-       year = "2019",
-       month = "Apr",
-       eid = {arXiv:1904.04474},
-       archivePrefix = {arXiv},
-       eprint = {1904.04474}
+@ARTICLE{poor_visibility_benchmark,
+  author={Yang, Wenhan and Yuan, Ye and Ren, Wenqi and Liu, Jiaying and Scheirer, Walter J. and Wang, Zhangyang and Zhang, and et al.},
+  journal={IEEE Transactions on Image Processing}, 
+  title={Advancing Image Understanding in Poor Visibility Environments: A Collective Benchmark Study}, 
+  year={2020},
+  volume={29},
+  number={},
+  pages={5737-5752},
+  doi={10.1109/TIP.2020.2981922}
 }
+
 @inproceedings{Chen2018Retinex,
        title={Deep Retinex Decomposition for Low-Light Enhancement},
        author={Chen Wei, Wenjing Wang, Wenhan Yang, Jiaying Liu},
