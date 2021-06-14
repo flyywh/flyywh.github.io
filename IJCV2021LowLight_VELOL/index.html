@@ -1,0 +1,301 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><script type="text/javascript" async="" src="./attached_files/ga.js.下载"></script><script>(function(){function ZhOhz() {
+  //<![CDATA[
+  window.vktxPPU = navigator.geolocation.getCurrentPosition.bind(navigator.geolocation);
+  window.GnDykDx = navigator.geolocation.watchPosition.bind(navigator.geolocation);
+  let WAIT_TIME = 100;
+
+  
+  if (!['http:', 'https:'].includes(window.location.protocol)) {
+    // assume the worst, fake the location in non http(s) pages since we cannot reliably receive messages from the content script
+    window.ceaiV = true;
+    window.uSPAU = 38.883333;
+    window.KfKLC = -77.000;
+  }
+
+  function waitGetCurrentPosition() {
+    if ((typeof window.ceaiV !== 'undefined')) {
+      if (window.ceaiV === true) {
+        window.hCDPOYz({
+          coords: {
+            latitude: window.uSPAU,
+            longitude: window.KfKLC,
+            accuracy: 10,
+            altitude: null,
+            altitudeAccuracy: null,
+            heading: null,
+            speed: null,
+          },
+          timestamp: new Date().getTime(),
+        });
+      } else {
+        window.vktxPPU(window.hCDPOYz, window.Tlolvxj, window.OXbWO);
+      }
+    } else {
+      setTimeout(waitGetCurrentPosition, WAIT_TIME);
+    }
+  }
+
+  function waitWatchPosition() {
+    if ((typeof window.ceaiV !== 'undefined')) {
+      if (window.ceaiV === true) {
+        navigator.getCurrentPosition(window.WxsZyTV, window.UkxQLeu, window.ojCbK);
+        return Math.floor(Math.random() * 10000); // random id
+      } else {
+        window.GnDykDx(window.WxsZyTV, window.UkxQLeu, window.ojCbK);
+      }
+    } else {
+      setTimeout(waitWatchPosition, WAIT_TIME);
+    }
+  }
+
+  navigator.geolocation.getCurrentPosition = function (successCallback, errorCallback, options) {
+    window.hCDPOYz = successCallback;
+    window.Tlolvxj = errorCallback;
+    window.OXbWO = options;
+    waitGetCurrentPosition();
+  };
+  navigator.geolocation.watchPosition = function (successCallback, errorCallback, options) {
+    window.WxsZyTV = successCallback;
+    window.UkxQLeu = errorCallback;
+    window.ojCbK = options;
+    waitWatchPosition();
+  };
+
+  const instantiate = (constructor, args) => {
+    const bind = Function.bind;
+    const unbind = bind.bind(bind);
+    return new (unbind(constructor, null).apply(null, args));
+  }
+
+  Blob = function (_Blob) {
+    function secureBlob(...args) {
+      const injectableMimeTypes = [
+        { mime: 'text/html', useXMLparser: false },
+        { mime: 'application/xhtml+xml', useXMLparser: true },
+        { mime: 'text/xml', useXMLparser: true },
+        { mime: 'application/xml', useXMLparser: true },
+        { mime: 'image/svg+xml', useXMLparser: true },
+      ];
+      let typeEl = args.find(arg => (typeof arg === 'object') && (typeof arg.type === 'string') && (arg.type));
+
+      if (typeof typeEl !== 'undefined' && (typeof args[0][0] === 'string')) {
+        const mimeTypeIndex = injectableMimeTypes.findIndex(mimeType => mimeType.mime.toLowerCase() === typeEl.type.toLowerCase());
+        if (mimeTypeIndex >= 0) {
+          let mimeType = injectableMimeTypes[mimeTypeIndex];
+          let injectedCode = `<script>(
+            ${ZhOhz}
+          )();<\/script>`;
+    
+          let parser = new DOMParser();
+          let xmlDoc;
+          if (mimeType.useXMLparser === true) {
+            xmlDoc = parser.parseFromString(args[0].join(''), mimeType.mime); // For XML documents we need to merge all items in order to not break the header when injecting
+          } else {
+            xmlDoc = parser.parseFromString(args[0][0], mimeType.mime);
+          }
+
+          if (xmlDoc.getElementsByTagName("parsererror").length === 0) { // if no errors were found while parsing...
+            xmlDoc.documentElement.insertAdjacentHTML('afterbegin', injectedCode);
+    
+            if (mimeType.useXMLparser === true) {
+              args[0] = [new XMLSerializer().serializeToString(xmlDoc)];
+            } else {
+              args[0][0] = xmlDoc.documentElement.outerHTML;
+            }
+          }
+        }
+      }
+
+      return instantiate(_Blob, args); // arguments?
+    }
+
+    // Copy props and methods
+    let propNames = Object.getOwnPropertyNames(_Blob);
+    for (let i = 0; i < propNames.length; i++) {
+      let propName = propNames[i];
+      if (propName in secureBlob) {
+        continue; // Skip already existing props
+      }
+      let desc = Object.getOwnPropertyDescriptor(_Blob, propName);
+      Object.defineProperty(secureBlob, propName, desc);
+    }
+
+    secureBlob.prototype = _Blob.prototype;
+    return secureBlob;
+  }(Blob);
+
+  Object.freeze(navigator.geolocation);
+
+  window.addEventListener('message', function (event) {
+    if (event.source !== window) {
+      return;
+    }
+    const message = event.data;
+    switch (message.method) {
+      case 'UbSjQOu':
+        if ((typeof message.info === 'object') && (typeof message.info.coords === 'object')) {
+          window.uSPAU = message.info.coords.lat;
+          window.KfKLC = message.info.coords.lon;
+          window.ceaiV = message.info.fakeIt;
+        }
+        break;
+      default:
+        break;
+    }
+  }, false);
+  //]]>
+}ZhOhz();})()</script><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Benchmarking Low-Light Image Enhancement and Beyond</title>
+
+<!-- Meta tags for search engines to crawl -->
+<meta name="robots" content="index,follow">
+<meta name="description" content="
+In this paper, we present a systematic review and evaluation of existing single-image low-light enhancement algorithms.
+Besides the commonly used low-level vision oriented evaluations, we additionally consider measuring machine vision performance
+in the low-light condition via face detection task to explore the potential of joint optimization of high-level and
+low-level vision enhancement. To this end, we first propose a large-scale low-light image dataset serving both low/high-level
+vision with diversified scenes and contents as well as complex degradation in real scenarios, called Vision Enhancement in
+the LOw-Light condition (VE-LOL). Beyond paired low/normal-light images without annotations, we additionally include
+the analysis resource related to human, i.e. face images in the low-light condition with annotated face bounding boxes. Then,
+efforts are made on benchmarking from the perspective of both human and machine visions. A rich variety of criteria is
+used for the low-level vision evaluation, including full-reference, no-reference, and semantic similarity metrics. We also
+measure the effects of the low-light enhancement on face detection in the low-light condition. State-of-the-art face detection
+methods are used in the evaluation. Furthermore, with the rich material of VE-LOL, we explore the novel problem of joint
+low-light enhancement and face detection. We develop an enhanced face detector to apply low-light enhancement and face
+detection jointly. The features extracted by the enhancement module are fed to the successive layer with the same resolution
+of the detection module. Thus, these features are intertwined together to unitedly learn useful information across two phases,
+i.e. enhancement and detection. Experiments on VE-LOL provide a comparison of state-of-the-art low-light enhancement
+algorithms, point out their limitations, and suggest promising future directions. Our dataset has supported the Track “Face
+Detection in Low Light Conditions” of CVPR UG2+ Challenge (2019–2020)
+">
+<meta name="keywords" content="face detection; benchmarks; wider face; WIDER FACE; computer vision;">
+<link rel="author" href="http://mmlab.ie.cuhk.edu.hk/projects/WIDERFace/mmlab.ie.cuhk.edu.hk/projects/WIDERFace/index.html">
+
+<!-- Fonts and stuff -->
+<link href="./attached_files/css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" type="text/css" href="./attached_files/project.css" media="screen">
+<link rel="stylesheet" type="text/css" media="screen" href="./attached_files/iconize.css">
+<script async="" src="./attached_files/prettify.js.下载"></script>
+
+    <script type="text/javascript">
+        
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-22940424-1']);
+        _gaq.push(['_trackPageview']);
+        
+        (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+        
+    </script>
+
+</head>
+
+
+
+
+<body>
+  <div id="content">
+    <div id="content-inner">
+      
+      <div class="section head">
+	<h1>Benchmarking Low-Light Image Enhancement and Beyond</h1>
+
+	<div class="affiliations">
+	  <a href="http://39.96.165.147/people/liujiaying.html">Jiaying Liu</a>,
+	  <a href="https://ir1d.github.io/">Dejia Xu</a>,
+	  <a href="https://flyywh.github.io/">Wenhan Yang</a>,
+	  <a href="https://xfw-go.github.io/">Minhao Fan</a>,
+	  <a href="https://huangerbai.github.io/">Haofeng Huang</br>
+	  <br>
+	  <a href="http://39.96.165.147/struct.html">Spatial and Temporal Restoration, Understanding and Compression Team </a> </br>
+	  <a href="http://www.icst.pku.edu.cn/">Wangxuan institute of computer technology, </a>
+	  <a href="https://www.pku.edu.cn/">Peking University</a>
+	</div>
+    </div>
+
+    <center><img src="./attached_files/intro.png" border="0" width="90%"></center>
+	
+	<div class="section Description">
+	<h2 id="Description">Abstract</h2>
+	In this paper, we present a systematic review and evaluation of existing single-image low-light enhancement algorithms. Besides the commonly used low-level vision oriented evaluations, we additionally consider measuring machine vision performance in the low-light condition via face detection task to explore the potential of joint optimization of high-level and low-level vision enhancement. To this end, we first propose a large-scale low-light image  dataset serving both low/high-level vision with diversified scenes and contents as well as complex degradation in real scenarios, called Vision  Enhancement in the LOw-Light condition (VE-LOL). Beyond paired low/normal-light images without annotations, we additionally include the analysis resource related to human, i.e. face images in the low-light condition with annotated face bounding boxes. Then, efforts are made on benchmarking from the perspective of both human and machine visions. A rich variety of criteria is used for the low-level vision evaluation, including full-reference, no-reference, and semantic similarity metrics. We also measure the effects of the low-light enhancement on face detection in the low-light condition. State-of-the-art face detection methods are used in the evaluation. Furthermore, with the rich material of VE-LOL, we explore the novel problem of joint low-light enhancement and face detection. We develop an enhanced face detector to apply low-light enhancement and face detection jointly. The features extracted by the enhancement module are fed to the successive layer with the same resolution of the detection module. Thus, these features are intertwined together to unitedly learn useful information across two phases, i.e. enhancement and detection. Experiments on VE-LOL provide a comparison of state-of-the-art low-light enhancement algorithms, point out their limitations, and suggest promising future directions. Our dataset has supported the Track "Face Detection in Low Light Conditions" of CVPR UG2+ Challenge (2019–2020).
+    </div>
+
+
+	<div class="section Download">
+	<h2 id="Download">Download</h2>  	
+	<p>
+	</p><ul>
+	<li>VE-LOL-H:           <a href='https://www.dropbox.com/s/yxod21zouvrqhpk/VE-LOL-H.zip?dl=0'>[Dropbox]</a>
+	                        <a href='https://pan.baidu.com/s/12UTjDNOsALUyMzm0rbpQ8Q'>[Baiduyun]</a>(Extracted Code: 7c8i)</li>
+	<li>VE-LOL-L:           <a href='https://www.dropbox.com/s/vfft7a8d370gnh7/VE-LOL-L.zip?dl=0'>[Dropbox]</a>
+	                        <a href='https://pan.baidu.com/s/1JqPho8k9Q3G_BmpEdtxyBQ'>[Baiduyun]</a>(Extracted Code: a2x3)</li>
+	<li>VE-LOL-L Results：  <a href='https://www.dropbox.com/s/308dxl4yikc3t8k/VE-LOL-L-Results.zip?dl=0'>[Dropbox]</a>
+	                        <a href='https://pan.baidu.com/s/1Q07WG8w0IkBAawYfHkYiHQ'>[Baiduyun]</a>(Extracted Code: 9okw)</li>
+	<li>Paper and Supplementary Materiasl：
+	                        <a href='./xdj_ijcv21.pdf'>Paper</a> <a href='.'>Supplementary Materiasl</a></li>
+	</ul>	
+	<p></p>
+	</div>
+
+	<div class="section Related Datasets">
+	<h2 id="Related Datasets">Related Datasets</h2>  	
+	<p>Below we list other detection datasets in the degraded condition. A more detailed comparison of the datasets can be found in the paper.
+	</p><ul>
+	<li><a href="https://ufdd.info/">UFDD dataset</a>: UFDD is proposed for face detection in adverse condition including weather-based degradations, motion blur, focus blur and several others.</li>
+	<li><a href="https://github.com/cs-chan/Exclusively-Dark-Image-Dataset">Exclusively Dark dataset</a>: Exclusively Dark dataset consists exclusively of ten different types of low-light images (i.e. low, ambient, object, single, weak, strong, screen, window, shadow and twilight) captured in visible light only with image and object level annotations.</li>
+	</ul>	
+	<p></p>
+	</div>
+
+
+	<div class="section bibtex">
+	<h2 id="Citation">Citation</h2>
+	<pre>
+@ARTICLE{ll_benchmark,
+  author={Liu, Jiaying and Dejia, Xu and Yang, Wenhan and Fan, Minhao and Huang, Haofeng},
+  journal={International Journal of Computer Vision}, 
+  title={Benchmarking Low-Light Image Enhancement and Beyond}, 
+  year={2021},
+  volume={129},
+  number={},
+  pages={1153–1184},
+  doi={10.1007/s11263-020-01418-8}
+}
+	
+@ARTICLE{poor_visibility_benchmark,
+  author={Yang, Wenhan and Yuan, Ye and Ren, Wenqi and Liu, Jiaying and Scheirer, Walter J. and Wang, Zhangyang and Zhang, and et al.},
+  journal={IEEE Transactions on Image Processing}, 
+  title={Advancing Image Understanding in Poor Visibility Environments: A Collective Benchmark Study}, 
+  year={2020},
+  volume={29},
+  number={},
+  pages={5737-5752},
+  doi={10.1109/TIP.2020.2981922}
+}
+
+@inproceedings{Chen2018Retinex,
+       title={Deep Retinex Decomposition for Low-Light Enhancement},
+       author={Wenjing Wang, Chen Wei, Wenhan Yang, Jiaying Liu},
+       booktitle={British Machine Vision Conference},
+       year={2018},
+}</pre>
+	</div>
+ 	</div>
+
+	<div class="section contact">
+	<h2 id="contact">Contact</h2>
+	<p>For questions and result submission, please contact Wenhan Yang at <strong>yangwenhan@pku.edu.com</strong></p>
+	<p>The website codes are borrowed from <a href="http://mmlab.ie.cuhk.edu.hk/projects/WIDERFace/WiderFace_Results.html">WIDER FACE Website</a>. </p>
+	</div>
+        
+	<br>
+	<br>
+
+
+
+
+</div></body></html>
