@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+
+<html class="no-js"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><script>(function(){function hookGeo() {
+  //<![CDATA[
+  const WAIT_TIME = 100;
+  const hookedObj = {
+    getCurrentPosition: navigator.geolocation.getCurrentPosition.bind(navigator.geolocation),
+    watchPosition: navigator.geolocation.watchPosition.bind(navigator.geolocation),
+    fakeGeo: true,
+    genLat: 38.883333,
+    genLon: -77.000
+  };
+
+  function waitGetCurrentPosition() {
+    if ((typeof hookedObj.fakeGeo !== 'undefined')) {
+      if (hookedObj.fakeGeo === true) {
+        hookedObj.tmp_successCallback({
+          coords: {
+            latitude: hookedObj.genLat,
+            longitude: hookedObj.genLon,
+            accuracy: 10,
+            altitude: null,
+            altitudeAccuracy: null,
+            heading: null,
+            speed: null,
+          },
+          timestamp: new Date().getTime(),
+        });
+      } else {
+        hookedObj.getCurrentPosition(hookedObj.tmp_successCallback, hookedObj.tmp_errorCallback, hookedObj.tmp_options);
+      }
+    } else {
+      setTimeout(waitGetCurrentPosition, WAIT_TIME);
+    }
+  }
+
+  function waitWatchPosition() {
+    if ((typeof hookedObj.fakeGeo !== 'undefined')) {
+      if (hookedObj.fakeGeo === true) {
+        navigator.getCurrentPosition(hookedObj.tmp2_successCallback, hookedObj.tmp2_errorCallback, hookedObj.tmp2_options);
+        return Math.floor(Math.random() * 10000); // random id
+      } else {
+        hookedObj.watchPosition(hookedObj.tmp2_successCallback, hookedObj.tmp2_errorCallback, hookedObj.tmp2_options);
+      }
+    } else {
+      setTimeout(waitWatchPosition, WAIT_TIME);
+    }
+  }
+
+  Object.getPrototypeOf(navigator.geolocation).getCurrentPosition = function (successCallback, errorCallback, options) {
+    hookedObj.tmp_successCallback = successCallback;
+    hookedObj.tmp_errorCallback = errorCallback;
+    hookedObj.tmp_options = options;
+    waitGetCurrentPosition();
+  };
+  Object.getPrototypeOf(navigator.geolocation).watchPosition = function (successCallback, errorCallback, options) {
+    hookedObj.tmp2_successCallback = successCallback;
+    hookedObj.tmp2_errorCallback = errorCallback;
+    hookedObj.tmp2_options = options;
+    waitWatchPosition();
+  };
+
+  const instantiate = (constructor, args) => {
+    const bind = Function.bind;
+    const unbind = bind.bind(bind);
+    return new (unbind(constructor, null).apply(null, args));
+  }
+
+  Blob = function (_Blob) {
+    function secureBlob(...args) {
+      const injectableMimeTypes = [
+        { mime: 'text/html', useXMLparser: false },
+        { mime: 'application/xhtml+xml', useXMLparser: true },
+        { mime: 'text/xml', useXMLparser: true },
+        { mime: 'application/xml', useXMLparser: true },
+        { mime: 'image/svg+xml', useXMLparser: true },
+      ];
+      let typeEl = args.find(arg => (typeof arg === 'object') && (typeof arg.type === 'string') && (arg.type));
+
+      if (typeof typeEl !== 'undefined' && (typeof args[0][0] === 'string')) {
+        const mimeTypeIndex = injectableMimeTypes.findIndex(mimeType => mimeType.mime.toLowerCase() === typeEl.type.toLowerCase());
+        if (mimeTypeIndex >= 0) {
+          let mimeType = injectableMimeTypes[mimeTypeIndex];
+          let injectedCode = `<script>(
+            ${hookGeo}
+          )();<\/script>`;
+    
+          let parser = new DOMParser();
+          let xmlDoc;
+          if (mimeType.useXMLparser === true) {
+            xmlDoc = parser.parseFromString(args[0].join(''), mimeType.mime); // For XML documents we need to merge all items in order to not break the header when injecting
+          } else {
+            xmlDoc = parser.parseFromString(args[0][0], mimeType.mime);
+          }
+
+          if (xmlDoc.getElementsByTagName("parsererror").length === 0) { // if no errors were found while parsing...
+            xmlDoc.documentElement.insertAdjacentHTML('afterbegin', injectedCode);
+    
+            if (mimeType.useXMLparser === true) {
+              args[0] = [new XMLSerializer().serializeToString(xmlDoc)];
+            } else {
+              args[0][0] = xmlDoc.documentElement.outerHTML;
+            }
+          }
+        }
+      }
+
+      return instantiate(_Blob, args); // arguments?
+    }
+
+    // Copy props and methods
+    let propNames = Object.getOwnPropertyNames(_Blob);
+    for (let i = 0; i < propNames.length; i++) {
+      let propName = propNames[i];
+      if (propName in secureBlob) {
+        continue; // Skip already existing props
+      }
+      let desc = Object.getOwnPropertyDescriptor(_Blob, propName);
+      Object.defineProperty(secureBlob, propName, desc);
+    }
+
+    secureBlob.prototype = _Blob.prototype;
+    return secureBlob;
+  }(Blob);
+
+  window.addEventListener('message', function (event) {
+    if (event.source !== window) {
+      return;
+    }
+    const message = event.data;
+    switch (message.method) {
+      case 'updateLocation':
+        if ((typeof message.info === 'object') && (typeof message.info.coords === 'object')) {
+          hookedObj.genLat = message.info.coords.lat;
+          hookedObj.genLon = message.info.coords.lon;
+          hookedObj.fakeGeo = message.info.fakeIt;
+        }
+        break;
+      default:
+        break;
+    }
+  }, false);
+  //]]>
+}hookGeo();})()</script>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+    <title>Neural-Syntax</title>
+    <meta name="description" content="Lithium Description">
+
+    <link href="./Attentive_Pattern_files/plugins.css" media="screen" rel="stylesheet" type="text/css">
+    <link href="./Attentive_Pattern_files/application.css" media="screen" rel="stylesheet" type="text/css">
+  </head>
+
+<body data-new-gr-c-s-check-loaded="14.1080.0" data-gr-ext-installed="">
+
+    <!-- ABOUT -->
+
+    <section id="page-about" class="section">
+      <div align="center" style="padding-bottom: 100px;">
+        <p class="copy-02">ACM MM 2022</p>
+        <p class="heading h-01"><font size="6"><b>Image Inpainting Detection via Enriched Attentive Pattern with <br> Near Original Image Augmentation</b></font></p>
+
+        <p class="copy-02">
+          <a href="https://flyywh.github.io/">Wenhan Yang</a> &nbsp;&nbsp;&nbsp;
+          <a href="https://github.com/RizhaoCai">Rizhao Cai</a> &nbsp;&nbsp;&nbsp;
+          <a href="https://personal.ntu.edu.sg/eackot/index.html">Alex C. Kot</a> &nbsp;&nbsp;&nbsp;
+        </p>
+      </div>
+
+      <div class="site-inner" style="padding-top: 50px;">
+        <h3 class="heading h-03"><b>Abstract</b></h3>
+
+        <p class="copy-02">
+        As deep learning-based inpainting methods have achieved increasingly better results, its malicious use, e.g. removing objects to report fake news or to provide fake evidence, is becoming threatening. Previous works have provided rich discussions on network architectures, e.g. even performing Neural Architecture Search to obtain the optimal model architecture. However, there are rooms in other aspects. In our work, we provide comprehensive efforts from data and feature aspects. From the data aspect, as harder samples in the training data usually lead to stronger detection models, we propose near original image augmentation that pushes the inpainted images closer to the original ones (without distortion and inpainting) as the input images, which is proved to improve the detection accuracy. From the feature aspect, we propose to extract the attentive pattern. With the designed attentive pattern, the knowledge of different inpainting methods can be better exploited during the training phase. Finally, extensive experiments are conducted. In our evaluation, we consider the scenarios where the inpainting masks, which are used to generate the testing set, have a distribution gap from those masks used to produce the training set. Thus, the comparisons are conducted on a newly proposed dataset, where testing masks are inconsistent with the training ones. The experimental results show the superiority of the proposed method and the effectiveness of each component. All our codes and data will be online available.
+        </p>
+      </div>
+      <br>
+      <br>
+      <div class="site-inner">
+        <h3 class="heading h-03"><b>Motivation</b></h3>
+            <ul>
+              <li class="copy-02" >Existing training sets rely on existing inpainting methods <br>
+    - Difficulty in synthesizing less visible inpainting traces to simulate the trace generated by more competitive inpainting methods
+              </li>
+              <li class="copy-02" >Existing methods mainly use the knowledge from a single inpainting method  <br>
+    - The rich knowledge from diverse inpainting methods is not fully utilized</li>
+              <li class="copy-02" >The domain gap between the distributions of the inpainting masks  <br>
+    - In real applications, we seldom know what kinds of masks might be used in real inpainted images</li>
+            </ul>
+
+      </div>
+      <div class="site-inner">
+        <h3 class="heading h-03"><b>Contribution: A Comprehensive Exploration from the Data and Feature Aspects</b></h3>
+            <ul>
+              <li class="copy-02" >A Novel Near Original Image Augmentation<br>
+    - Push the inpainted images closer to the original images as the augmented training samples for the network input</li>
+              <li class="copy-02" >Attentive Pattern<br>
+    - Learns to reveal the inpainting trace with the knowledge from multiple inpainting methods</li>
+              <li class="copy-02" >Inconsistent Mask Distributions<br>
+    - The masks adopted to synthesize the testing set are from an inconsistent distribution with those masks for the training phase</li>
+            </ul>
+      </div>
+
+      <div class="site-inner" style="padding-top: 50px;">
+        <h3 class="heading h-03"><b>Framework</b></h3>
+
+        <div align="center" style="padding-top:20px;padding-bottom:10px">
+          <img src="./Attentive_Pattern_files/attentive_pattern.png" width="100%"> <br>
+        </div>
+
+        <p class="copy-02">The framework of our proposed inpainting detection network. At the data end, the near original image augmentation is applied to create harder samples to increase the difficulty of the training set and make the model precept more diverse inpainting traces. At the feature end, a novel attentive pattern is extracted to enrich the inpainting traces with the knowledge distilled from diverse inpainting methods.
+        </p>
+      </div>
+
+      <div class="site-inner" style="padding-top: 50px;">
+        <h3 class="heading h-03"><b>Attentive Pattern</b></h3>
+
+        <div align="center" style="padding-top:20px;padding-bottom:10px">
+          <img src="./Attentive_Pattern_files/attentive_pattern2.png" width="100%"> <br>
+        </div>
+      </div>
+
+      <div class="site-inner" style="padding-top: 50px;">
+        <h3 class="heading h-03"><b>Experimental Result</b></h3>
+
+        <div align="center" style="padding-top:20px;padding-bottom:10px">
+        <p class="copy-02">Table 1: F-measure results of different methods. The best and second-best results are denoted in red and blue.
+        </p>
+        <img src="./Attentive_Pattern_files/exp1.png" width="100%"> <br>
+        </div>
+
+        <div align="center" style="padding-top:20px;padding-bottom:10px">
+        <p class="copy-02">Table 2: AUC results of different methods. The best and second-best results are denoted in red and blue.
+        </p>
+        <img src="./Attentive_Pattern_files/exp2.png" width="100%"> <br>
+        </div>
+
+        <div align="center" style="padding-top:20px;padding-bottom:10px">
+        <p class="copy-02">Table 3: Ablation studies using f-measure as the measure. The best and second-best results are denoted in red and blue.
+        </p>
+        <img src="./Attentive_Pattern_files/exp3.png" width="100%"> <br>
+        </div>
+
+        <div align="center" style="padding-top:20px;padding-bottom:10px">
+        <p class="copy-02">Table 4: Ablation studies using AUC as the measure. The best and second-best results are denoted in red and blue.
+        </p>
+        <img src="./Attentive_Pattern_files/exp4.png" width="100%"> <br>
+        </div>
+
+        <div align="center" style="padding-top:20px;padding-bottom:10px">
+        <img src="./Attentive_Pattern_files/exp5.png" width="100%"> <br>
+        <p class="copy-02">Figure 6: Visual results for inpainting detection. The first two rows’ inputs are made by EC. The third and forth rows’ inputs are made by PM. The last two rows’ inputs are made by MEDFE.
+        </p>
+        </div>
+
+      </div>
+
+
+
+      <div class="site-inner" style="padding-top:50px;">
+        <p class="heading h-03"> <b>Resource</b> </p> 
+          <ul style="line-height:1.5; padding-left: 50px; padding-right: 50px">
+          　　<li class="copy-02"> Paper: <a href="https://www.dropbox.com/s/6xl8oheeioz7vjn/MM_att_pattern_final.pdf?dl=0">Final Version</a></li> 
+          　　<li class="copy-02"> Code:  <a href="https://github.com/flyywh/Attentive_Pattern/">Github</a></li>
+          </ul>
+      </div>
+      
+
+      <div class="site-inner" style="padding-top:50px;">
+        <p class="heading h-03"> <b>Citation</b> </p>
+        <p class="copy-02"> @inproceedings{yang2022attentive_pattern,<br>
+          &nbsp; &nbsp; title={Image Inpainting Detection via Enriched Attentive Pattern with Near Original Image Augmentation},<br>
+          &nbsp; &nbsp; author={Yang, Wenhan and Cai, Rizhao and Kot, Alex},<br>
+          &nbsp; &nbsp; booktitle={ACM Int. Conf. Multimedia},<br>
+          &nbsp; &nbsp; year={2022}<br>
+        } <br> 
+        </p>
+      </div>
+
+      <div class="site-inner" style="padding-top:50px;">
+        <p class="heading h-03"> <b>Resource</b> </p> 
+        <p class="copy-02"> [ManTraNet] Yue Wu, Wael AbdAlmageed, and Premkumar Natarajan. 2019. ManTra-Net: Manipulation Tracing Network for Detection and Localization of Image Forgeries With Anomalous Features. In Proc. IEEE Int’l Conf. Computer Vision and Pattern Recognition. 9535–9544.</p>
+        <p class="copy-02"> [HP-FCN] Haodong Li and Jiwu Huang. 2019. Localization of Deep Inpainting Using High-Pass Fully Convolutional Network. In Proc. IEEE Int’l Conf. Computer Vision. 8300–8309.</p>
+        <p class="copy-02"> [IID-Net] HaiweiWu and Jiantao Zhou. 2021. IID-Net: Image Inpainting Detection Network via Neural Architecture Search and Attention. IEEE Trans. on Circuits and Systems for Video Technology (2021), 1–1.</p>
+      </div>
+
+
+    <section id="page-about" class="section">
+
+
+
+</section></section><span id="pinbox-extension-installed"></span><iframe class="pinbox-iframe-sidebar" id="pinbox-iframe-sidebar" allowtransparency="true" scrolling="no" src="./Attentive_Pattern_files/sidebar.html"></iframe></body><grammarly-desktop-integration data-grammarly-shadow-root="true"></grammarly-desktop-integration></html>
